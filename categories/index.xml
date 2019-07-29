@@ -1,30 +1,39 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Quanta</title>
-    <link>http://xyli1905.github.io/categories/</link>
+    <link>https://xyli1905.github.io/categories/</link>
     <description>Recent content in Categories on Quanta</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 28 Jul 2019 23:13:39 -0700</lastBuildDate>
+    <lastBuildDate>Mon, 29 Jul 2019 10:24:47 -0700</lastBuildDate>
     
-        <atom:link href="http://xyli1905.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://xyli1905.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>DeepInfoFlow</title>
+      <link>https://xyli1905.github.io/categories/deepinfoflow/</link>
+      <pubDate>Mon, 29 Jul 2019 10:24:47 -0700</pubDate>
+      
+      <guid>https://xyli1905.github.io/categories/deepinfoflow/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>uncategorized</title>
-      <link>http://xyli1905.github.io/categories/uncategorized/</link>
+      <link>https://xyli1905.github.io/categories/uncategorized/</link>
       <pubDate>Sun, 28 Jul 2019 23:13:39 -0700</pubDate>
       
-      <guid>http://xyli1905.github.io/categories/uncategorized/</guid>
+      <guid>https://xyli1905.github.io/categories/uncategorized/</guid>
       <description></description>
     </item>
     
     <item>
       <title>hugo</title>
-      <link>http://xyli1905.github.io/categories/hugo/</link>
+      <link>https://xyli1905.github.io/categories/hugo/</link>
       <pubDate>Sun, 28 Sep 2014 22:52:52 -0700</pubDate>
       
-      <guid>http://xyli1905.github.io/categories/hugo/</guid>
+      <guid>https://xyli1905.github.io/categories/hugo/</guid>
       <description></description>
     </item>
     

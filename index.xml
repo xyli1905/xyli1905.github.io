@@ -1,42 +1,56 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Quanta</title>
-    <link>http://xyli1905.github.io/</link>
+    <link>https://xyli1905.github.io/</link>
     <description>Recent content on Quanta</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 28 Jul 2019 23:13:39 -0700</lastBuildDate>
+    <lastBuildDate>Mon, 29 Jul 2019 10:24:47 -0700</lastBuildDate>
     
-        <atom:link href="http://xyli1905.github.io/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://xyli1905.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Creating a New Theme</title>
-      <link>http://xyli1905.github.io/2014/09/creating-a-new-theme/</link>
+      <link>https://xyli1905.github.io/2014/09/creating-a-new-theme/</link>
       <pubDate>Sun, 28 Sep 2014 22:52:52 -0700</pubDate>
       
-      <guid>http://xyli1905.github.io/2014/09/creating-a-new-theme/</guid>
+      <guid>https://xyli1905.github.io/2014/09/creating-a-new-theme/</guid>
       <description>Introduction This tutorial will show you how to create a simple theme in Hugo. I assume that you are familiar with HTML, the bash command line, and that you are comfortable using Markdown to format content. I&amp;rsquo;ll explain how Hugo uses templates and how you can organize your templates to create a theme. I won&amp;rsquo;t cover using CSS to style your theme.
 We&amp;rsquo;ll start with creating a new site with a very basic template.</description>
     </item>
     
     <item>
       <title>Migrate to Hugo from Jekyll</title>
-      <link>http://xyli1905.github.io/2014/03/migrate-from-jekyll/</link>
+      <link>https://xyli1905.github.io/2014/03/migrate-from-jekyll/</link>
       <pubDate>Mon, 10 Mar 2014 22:52:52 -0700</pubDate>
       
-      <guid>http://xyli1905.github.io/2014/03/migrate-from-jekyll/</guid>
+      <guid>https://xyli1905.github.io/2014/03/migrate-from-jekyll/</guid>
       <description>Move static content to static Jekyll has a rule that any directory not starting with _ will be copied as-is to the _site output. Hugo keeps all static content under static. You should therefore move it all there. With Jekyll, something that looked like
 ▾ &amp;lt;root&amp;gt;/ ▾ images/ logo.png  should become
 ▾ &amp;lt;root&amp;gt;/ ▾ static/ ▾ images/ logo.png  Additionally, you&amp;rsquo;ll want any files that should reside at the root (such as CNAME) to be moved to static.</description>
     </item>
     
     <item>
+      <title>Variational Form for H(x)</title>
+      <link>https://xyli1905.github.io/2019/07/variational-form-for-hx/</link>
+      <pubDate>Mon, 29 Jul 2019 10:24:47 -0700</pubDate>
+      
+      <guid>https://xyli1905.github.io/2019/07/variational-form-for-hx/</guid>
+      <description>for continuum random variable $X$, the differential entropy id defined as
+$$\int P(x)\log\dfrac{1}{P(x)}\,\text{d}x,\tag{1}$$
+where $P(x)$ is the distribution for $X$.
+function $-\log v$ is strictly convex, let $\phi$ be its conjugate dual function, then $-\log v = \underset{u\in\mathbb{R}}{\text{sup}}\left[uv - \phi(u)\right]$, $\phi(u) = -1 - \log(-u)$ for $u&amp;lt;0$ and $+\infty$ otherwise.
+using above, we have
+$$\begin{aligned} \int P(x)\log\frac{1}{P(x)}\,\text{d}x &amp;amp;= - \int P(x)\left(- \log\frac{1}{P(x)}\right)\,\text{d}x \\&amp;amp;= -\int P(x) \underset{f}{\text{sup}}\left[ f(x)\frac{1}{P(x)} - \phi(f) \right]\,\text{d}x \\&amp;amp;= -\underset{f}{\text{sup}}\left[ \int f(x)\,\text{d}x - \int \phi(f)P(x)\,\text{d}x\right] \\&amp;amp;= -\underset{f}{\text{sup}}\left[ \int f(x)\,\text{d}x - \mathbb{E}_{P}[\phi(f)]\right]\end{aligned}$$</description>
+    </item>
+    
+    <item>
       <title>Equation KaTeX</title>
-      <link>http://xyli1905.github.io/2019/07/equation-katex/</link>
+      <link>https://xyli1905.github.io/2019/07/equation-katex/</link>
       <pubDate>Sun, 28 Jul 2019 23:13:39 -0700</pubDate>
       
-      <guid>http://xyli1905.github.io/2019/07/equation-katex/</guid>
+      <guid>https://xyli1905.github.io/2019/07/equation-katex/</guid>
       <description>inline equation $\sum_i a_i$
 display model $$\int g(x)$$
 Integrate $$\int x^3 dx$$
@@ -51,10 +65,10 @@ $$\tag{1}\boxed{j=\begin{cases}f(x), &amp;amp;x&amp;gt;0\\g(x), &amp;amp;x&amp;l
     
     <item>
       <title>About Hugo</title>
-      <link>http://xyli1905.github.io/about/</link>
+      <link>https://xyli1905.github.io/about/</link>
       <pubDate>Wed, 09 Apr 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://xyli1905.github.io/about/</guid>
+      <guid>https://xyli1905.github.io/about/</guid>
       <description>Hugo is the world’s fastest framework for building websites. It is written in Go.
 It makes use of a variety of open source projects including:
  https://github.com/russross/blackfriday https://github.com/alecthomas/chroma https://github.com/muesli/smartcrop https://github.com/spf13/cobra https://github.com/spf13/viper  Learn more and contribute on GitHub.</description>
@@ -62,20 +76,20 @@ It makes use of a variety of open source projects including:
     
     <item>
       <title>(Hu)go Template Primer</title>
-      <link>http://xyli1905.github.io/2014/04/goisforlovers/</link>
+      <link>https://xyli1905.github.io/2014/04/goisforlovers/</link>
       <pubDate>Wed, 02 Apr 2014 22:52:52 -0700</pubDate>
       
-      <guid>http://xyli1905.github.io/2014/04/goisforlovers/</guid>
+      <guid>https://xyli1905.github.io/2014/04/goisforlovers/</guid>
       <description>Hugo uses the excellent Go html/template library for its template engine. It is an extremely lightweight engine that provides a very small amount of logic. In our experience that it is just the right amount of logic to be able to create a good static website. If you have used other template systems from different languages or frameworks you will find a lot of similarities in Go templates.
 This document is a brief primer on using Go templates.</description>
     </item>
     
     <item>
       <title>Getting Started with Hugo</title>
-      <link>http://xyli1905.github.io/2014/04/hugoisforlovers/</link>
+      <link>https://xyli1905.github.io/2014/04/hugoisforlovers/</link>
       <pubDate>Wed, 02 Apr 2014 22:52:52 -0700</pubDate>
       
-      <guid>http://xyli1905.github.io/2014/04/hugoisforlovers/</guid>
+      <guid>https://xyli1905.github.io/2014/04/hugoisforlovers/</guid>
       <description>Step 1. Install Hugo Go to Hugo releases and download the appropriate version for your OS and architecture.
 Save it somewhere specific as we will be using it in the next step.
 More complete instructions are available at Install Hugo

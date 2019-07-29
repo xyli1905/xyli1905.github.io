@@ -6,21 +6,21 @@
     <title>Quanta  | science, reflection, projects</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="icon" href="http://xyli1905.github.io/img/cropped-siteicon.png"/>
+    <link rel="shortcut icon" type="image/png" href="https://xyli1905.github.io/img/cropped-siteicon.png"/>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css" />
-    <link rel="stylesheet" href="http://xyli1905.github.io/css/blog.css" />
+    <link rel="stylesheet" href="https://xyli1905.github.io/css/blog.css" />
     
-    <link rel="alternate" type="application/rss&#43;xml" href="http://xyli1905.github.io/archives/2019-07/index.xml">
+    <link rel="alternate" type="application/rss&#43;xml" href="https://xyli1905.github.io/archives/2019-07/index.xml">
     </head>
 <body>
 
     
     <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
-            <a class="navbar-item" href="http://xyli1905.github.io/">Home</a>
-            <a class="navbar-item" href="http://xyli1905.github.io/about">About</a>
+            <a class="navbar-item" href="https://xyli1905.github.io/">Home</a>
+            <a class="navbar-item" href="https://xyli1905.github.io/about">About</a>
             <a class="navbar-item" href="https://github.com/xyli1905/DeepInfoFlow" target="_blank" rel="noopener noreferrer">DeepInfoFlow_Git</a>
         </div>
     </nav>
@@ -28,7 +28,8 @@
 
     
     <section class="hero is-info is-medium">
-        <div class="hero-body" style="background-image: url(http://xyli1905.github.io/img/calm.jpg); background-position: center center;">
+        
+        <div class="hero-body" style="background-image: url(https://xyli1905.github.io/img/calm.jpg);">
             <div class="container has-text-centered">
                 <br>
                 <h1 class="title is-size-1">
@@ -55,7 +56,48 @@
                 <article class="media">
                     <div class="media-content">
                         <div class="content">
-                            <p class="title is-4"><a href="http://xyli1905.github.io/2019/07/equation-katex/">Equation KaTeX</a></p>
+                            <p class="title is-4"><a href="https://xyli1905.github.io/2019/07/variational-form-for-hx/">Variational Form for H(x)</a></p>
+                            <p class="subtitle is-size-6 has-text-grey-light">
+                                July 29, 2019 &middot;
+                                
+                                    <i class="fa fa-user" aria-hidden="true"></i> Xingyu Li &middot;
+                                
+                                
+                                    <i class="fa fa-sitemap" aria-hidden="true"></i>
+                                    
+                                        <span class="category"><a href="https://xyli1905.github.io/categories/deepinfoflow">DeepInfoFlow</a></span>
+                                    
+                                    &middot;
+                                
+                                
+                                    <i class="fa fa-tag" aria-hidden="true"></i>
+                                    
+                                        <span class="tag"><a href="https://xyli1905.github.io/tags/information-theory">information theory</a></span>
+                                    
+                                        <span class="tag"><a href="https://xyli1905.github.io/tags/math">math</a></span>
+                                    
+                                        <span class="tag"><a href="https://xyli1905.github.io/tags/variational-form">variational form</a></span>
+                                    
+                                    &middot;
+                                
+                                <i class="far fa-clock"></i>&nbsp;2 min read
+                            </p>
+                            <p>for continuum random variable $X$, the differential entropy id defined as
+$$\int P(x)\log\dfrac{1}{P(x)}\,\text{d}x,\tag{1}$$
+where $P(x)$ is the distribution for $X$.
+function $-\log v$ is strictly convex, let $\phi$ be its conjugate dual function, then $-\log v = \underset{u\in\mathbb{R}}{\text{sup}}\left[uv - \phi(u)\right]$, $\phi(u) = -1 - \log(-u)$ for $u&lt;0$ and $+\infty$ otherwise.
+using above, we have
+$$\begin{aligned} \int P(x)\log\frac{1}{P(x)}\,\text{d}x &amp;= - \int P(x)\left(- \log\frac{1}{P(x)}\right)\,\text{d}x \\&amp;= -\int P(x) \underset{f}{\text{sup}}\left[ f(x)\frac{1}{P(x)} - \phi(f) \right]\,\text{d}x \\&amp;= -\underset{f}{\text{sup}}\left[ \int f(x)\,\text{d}x - \int \phi(f)P(x)\,\text{d}x\right] \\&amp;= -\underset{f}{\text{sup}}\left[ \int f(x)\,\text{d}x - \mathbb{E}_{P}[\phi(f)]\right]\end{aligned}$$</p>
+                            <a href="https://xyli1905.github.io/2019/07/variational-form-for-hx/" class="button big">Read More</a>
+                        </div>
+                    </div>
+                </article>
+                <br>
+
+                <article class="media">
+                    <div class="media-content">
+                        <div class="content">
+                            <p class="title is-4"><a href="https://xyli1905.github.io/2019/07/equation-katex/">Equation KaTeX</a></p>
                             <p class="subtitle is-size-6 has-text-grey-light">
                                 July 28, 2019 &middot;
                                 
@@ -64,14 +106,14 @@
                                 
                                     <i class="fa fa-sitemap" aria-hidden="true"></i>
                                     
-                                        <span class="category"><a href="http://xyli1905.github.io/categories/uncategorized">uncategorized</a></span>
+                                        <span class="category"><a href="https://xyli1905.github.io/categories/uncategorized">uncategorized</a></span>
                                     
                                     &middot;
                                 
                                 
                                     <i class="fa fa-tag" aria-hidden="true"></i>
                                     
-                                        <span class="tag"><a href="http://xyli1905.github.io/tags/untagged">untagged</a></span>
+                                        <span class="tag"><a href="https://xyli1905.github.io/tags/untagged">untagged</a></span>
                                     
                                     &middot;
                                 
@@ -87,7 +129,7 @@ $$x = \begin{cases} f(x)A, &amp; x&gt;B \\ g(x) &amp; x&lt;C \end{cases}$$
 $$\begin{aligned} f(x)A, &amp; x&gt;B \\ g(x) &amp; x&lt;C \end{aligned}$$
 $$ x = \begin{cases}a &amp;\text{if } b \\c &amp;\text{if } d\end{cases} $$
 $$\tag{1}\boxed{j=\begin{cases}f(x), &amp;x&gt;0\\g(x), &amp;x&lt;0\end{cases}}$$</p>
-                            <a href="http://xyli1905.github.io/2019/07/equation-katex/" class="button big">Read More</a>
+                            <a href="https://xyli1905.github.io/2019/07/equation-katex/" class="button big">Read More</a>
                         </div>
                     </div>
                 </article>
@@ -101,20 +143,20 @@ $$\tag{1}\boxed{j=\begin{cases}f(x), &amp;x&gt;0\\g(x), &amp;x&lt;0\end{cases}}$
     <div class="card-content">
         <h1 class="title is-5"><i class="fa fa-file" aria-hidden="true"></i> Recent posts</h1>
         
-            <h1><a href="http://xyli1905.github.io/2019/07/equation-katex/">Equation KaTeX</a></h1>
+            <h1><a href="https://xyli1905.github.io/2019/07/variational-form-for-hx/">Variational Form for H(x)</a></h1>
+            <time class="has-text-grey-light is-size-7">29 July 2019</time>
+        
+            <h1><a href="https://xyli1905.github.io/2019/07/equation-katex/">Equation KaTeX</a></h1>
             <time class="has-text-grey-light is-size-7">28 July 2019</time>
         
-            <h1><a href="http://xyli1905.github.io/2014/09/creating-a-new-theme/">Creating a New Theme</a></h1>
+            <h1><a href="https://xyli1905.github.io/2014/09/creating-a-new-theme/">Creating a New Theme</a></h1>
             <time class="has-text-grey-light is-size-7">28 September 2014</time>
         
-            <h1><a href="http://xyli1905.github.io/2014/04/hugoisforlovers/">Getting Started with Hugo</a></h1>
+            <h1><a href="https://xyli1905.github.io/2014/04/hugoisforlovers/">Getting Started with Hugo</a></h1>
             <time class="has-text-grey-light is-size-7">2 April 2014</time>
         
-            <h1><a href="http://xyli1905.github.io/2014/04/goisforlovers/">(Hu)go Template Primer</a></h1>
+            <h1><a href="https://xyli1905.github.io/2014/04/goisforlovers/">(Hu)go Template Primer</a></h1>
             <time class="has-text-grey-light is-size-7">2 April 2014</time>
-        
-            <h1><a href="http://xyli1905.github.io/2014/03/migrate-from-jekyll/">Migrate to Hugo from Jekyll</a></h1>
-            <time class="has-text-grey-light is-size-7">10 March 2014</time>
         
     </div>
 </div>
@@ -126,12 +168,17 @@ $$\tag{1}\boxed{j=\begin{cases}f(x), &amp;x&gt;0\\g(x), &amp;x&lt;0\end{cases}}$
         
 			
 			<ul style="list-style: none;">
-				<li class="category"><a href="http://xyli1905.github.io/categories/hugo">hugo</a> (4)</li>
+				<li class="category"><a href="https://xyli1905.github.io/categories/deepinfoflow">deepinfoflow</a> (1)</li>
 			</ul>
         
 			
 			<ul style="list-style: none;">
-				<li class="category"><a href="http://xyli1905.github.io/categories/uncategorized">uncategorized</a> (1)</li>
+				<li class="category"><a href="https://xyli1905.github.io/categories/hugo">hugo</a> (4)</li>
+			</ul>
+        
+			
+			<ul style="list-style: none;">
+				<li class="category"><a href="https://xyli1905.github.io/categories/uncategorized">uncategorized</a> (1)</li>
 			</ul>
         
         </div>          
@@ -142,15 +189,21 @@ $$\tag{1}\boxed{j=\begin{cases}f(x), &amp;x&gt;0\\g(x), &amp;x&lt;0\end{cases}}$
         <h1 class="title is-5"><i class="fa fa-tag" aria-hidden="true"></i> Tags</h1>
         <div class="tags">
         
-            <span class="tag"><a href="http://xyli1905.github.io/tags/hugo">hugo</a></span>
+            <span class="tag"><a href="https://xyli1905.github.io/tags/hugo">hugo</a></span>
         
-            <span class="tag"><a href="http://xyli1905.github.io/tags/templates">templates</a></span>
+            <span class="tag"><a href="https://xyli1905.github.io/tags/information-theory">information-theory</a></span>
         
-            <span class="tag"><a href="http://xyli1905.github.io/tags/themes">themes</a></span>
+            <span class="tag"><a href="https://xyli1905.github.io/tags/math">math</a></span>
         
-            <span class="tag"><a href="http://xyli1905.github.io/tags/tutorial">tutorial</a></span>
+            <span class="tag"><a href="https://xyli1905.github.io/tags/templates">templates</a></span>
         
-            <span class="tag"><a href="http://xyli1905.github.io/tags/untagged">untagged</a></span>
+            <span class="tag"><a href="https://xyli1905.github.io/tags/themes">themes</a></span>
+        
+            <span class="tag"><a href="https://xyli1905.github.io/tags/tutorial">tutorial</a></span>
+        
+            <span class="tag"><a href="https://xyli1905.github.io/tags/untagged">untagged</a></span>
+        
+            <span class="tag"><a href="https://xyli1905.github.io/tags/variational-form">variational-form</a></span>
         
         </div>          
     </div>
@@ -159,13 +212,13 @@ $$\tag{1}\boxed{j=\begin{cases}f(x), &amp;x&gt;0\\g(x), &amp;x&lt;0\end{cases}}$
     <div class="card-content">
         <h1 class="title is-5"><i class="fa fa-archive" aria-hidden="true"></i> Archives</h1>
         
-            <a href="http://xyli1905.github.io/archives/2019-07">2019-07</a> (1)<br>
+            <a href="https://xyli1905.github.io/archives/2019-07">2019-07</a> (2)<br>
         
-            <a href="http://xyli1905.github.io/archives/2014-09">2014-09</a> (1)<br>
+            <a href="https://xyli1905.github.io/archives/2014-09">2014-09</a> (1)<br>
         
-            <a href="http://xyli1905.github.io/archives/2014-04">2014-04</a> (2)<br>
+            <a href="https://xyli1905.github.io/archives/2014-04">2014-04</a> (2)<br>
         
-            <a href="http://xyli1905.github.io/archives/2014-03">2014-03</a> (1)<br>
+            <a href="https://xyli1905.github.io/archives/2014-03">2014-03</a> (1)<br>
         
     </div>
 </div>
@@ -199,25 +252,23 @@ $$\tag{1}\boxed{j=\begin{cases}f(x), &amp;x&gt;0\\g(x), &amp;x&lt;0\end{cases}}$
 <!doctype html>
 <html>
 <head>
-    
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.css">
     <script src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/contrib/auto-render.min.js"></script>
 
-    
 </head>
+
+
+
 <body>
-    
     <script>
         renderMathInElement(
             document.body,
             {
                 delimiters: [
                     {left: "$$", right: "$$", display: true},
-                    {left: "\\[", right: "\\]", display: true},
-                    {left: "$", right: "$", display: false},
-                    {left: "\\(", right: "\\)", display: false}
+                    {left: "$", right: "$", display: false}
                 ]
             }
         );

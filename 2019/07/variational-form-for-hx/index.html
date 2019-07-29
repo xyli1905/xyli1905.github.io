@@ -12,7 +12,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css" />
     <link rel="stylesheet" href="https://xyli1905.github.io/css/blog.css" />
     
-    <link rel="alternate" type="application/rss&#43;xml" href="https://xyli1905.github.io/categories/index.xml">
     </head>
 <body>
 
@@ -34,7 +33,7 @@
                 <br>
                 <h1 class="title is-size-1">
                     
-                        Categories </br>
+                        Variational Form for H(x) </br>
                         <h6>SCIENCE, REFLECTION, PROJECTS</h6>
                     
                 </h1>
@@ -48,12 +47,93 @@
     <div class="section">
     
 
-
+<header>
+    <div class="title">
+        <h1>Variational Form for H(x)</h1>
+    </div>
+    <div class="meta">
+        July 29, 2019 &middot;
+        
+            <i class="fa fa-user" aria-hidden="true"></i> Xingyu Li &middot;
+        
+        
+            <i class="fa fa-sitemap" aria-hidden="true"></i>
+            
+                <span class="category"><a href="https://xyli1905.github.io/categories/deepinfoflow">DeepInfoFlow</a></span>
+            
+            &middot;
+        
+        
+            <i class="fa fa-tag" aria-hidden="true"></i>
+            
+                <span class="tag"><a href="https://xyli1905.github.io/tags/information-theory">information theory</a></span>
+            
+                <span class="tag"><a href="https://xyli1905.github.io/tags/math">math</a></span>
+            
+                <span class="tag"><a href="https://xyli1905.github.io/tags/variational-form">variational form</a></span>
+            
+            &middot;
+        
+        <i class="far fa-clock"></i>&nbsp;2 min read
+    </div>
+    </br>
+</header>
 
 <div class="columns">
     <div class="column is-9">
         <div class="tile is-child box">
             <div class="content">
+                <p>for continuum random variable $X$, the differential entropy id defined as</p>
+
+<p>$$\int P(x)\log\dfrac{1}{P(x)}\,\text{d}x,\tag{1}$$</p>
+
+<p>where $P(x)$ is the distribution for $X$.</p>
+
+<p>function $-\log v$ is strictly convex, let $\phi$ be its conjugate dual function, then $-\log v = \underset{u\in\mathbb{R}}{\text{sup}}\left[uv - \phi(u)\right]$, $\phi(u) = -1 - \log(-u)$ for $u&lt;0$ and $+\infty$ otherwise.</p>
+
+<p>using above, we have</p>
+
+<p>$$\begin{aligned} \int P(x)\log\frac{1}{P(x)}\,\text{d}x &amp;= - \int P(x)\left(- \log\frac{1}{P(x)}\right)\,\text{d}x \\&amp;= -\int P(x) \underset{f}{\text{sup}}\left[ f(x)\frac{1}{P(x)} - \phi(f) \right]\,\text{d}x \\&amp;= -\underset{f}{\text{sup}}\left[ \int f(x)\,\text{d}x - \int \phi(f)P(x)\,\text{d}x\right] \\&amp;= -\underset{f}{\text{sup}}\left[ \int f(x)\,\text{d}x - \mathbb{E}_{P}[\phi(f)]\right]\end{aligned}$$</p>
+
+<p>where the supremum are taken over all measurable functions $f:\mathcal{X} \rightarrow \mathbb{R}$ ($\mathcal{X}$ being the sample space). We also see for any function class $\mathbf{F}$ that maps from $\mathcal{X}$ to $\mathbb{R}$, it holds</p>
+
+<p>$$\int P(x)\log\dfrac{1}{P(x)}\,\text{d}x \le -\underset{f(x)\in\mathbf{F}}{\text{sup}}\left[ \int f(x)\,\text{d}x - \mathbb{E}_{P}[\phi(f)]\right]. $$</p>
+
+<p>approximated with empirical mean, we have the following expression</p>
+
+<p>$$ -\underset{f(x)\in\mathbf{F}}{\text{sup}}\left[ \int f(x)\,\text{d}x - \frac{1}{N}\sum_i^N[\phi(g(x_i))]\right]$$</p>
+
+<p>where $x_i$ are samples from distribution $P(x)$.</p>
+
+<p>specifically, for the differential entropy case,</p>
+
+<p>$$ -\underset{g&gt;0}{\text{sup}}\left[\frac{1}{N}\sum_i^N \log g(x_i) -\int g(x)\,\text{d}x + 1\right], $$</p>
+
+<p>where we substitute $f = -g$.</p>
+
+<p>we may further restrict the function space to be a Reproducing Kernel Hilbert Space (RKHS) induced by Gaussian kernel.</p>
+
+<p>let $\mathcal{G}$ refer to the RKHS we use</p>
+
+<p>in RKHS, there are feature maps $ \psi_x $, any function $ g $ in $ \mathcal{G} $ can be cast into x-representation by $ g(x) = \langle g, \psi_x\rangle $</p>
+
+<p>for the kernel $K$, one has $K(x, y) = \langle \psi_x, \psi_y\rangle$</p>
+
+<p>the Gaussian kernel:</p>
+
+<p>$$ K(x,y) = e^{-|x-y|^2/\sigma}. $$</p>
+
+<p>to seek an optimal solution $\hat{g}$ for the differential entropy, using eq.(1) and the property of RKHS, we need to solve</p>
+
+<p>$$\hat{g}=\underset{g\in\mathcal{G}}{\text{arg}\min} \int g(x)\,\text{d}x - \frac{1}{N}\sum_i^N\log\langle g,\psi(x_i) \rangle + \frac{\lambda_N}{2}\mathbf{I}^2(g)$$</p>
+
+<p>$\frac{\lambda_N}{2}\mathbf{I}^2(g)$ is the regularization term that further reduces the searching space in $\mathcal{G}$.</p>
+
+<p>One may choose $\mathbf{I}^2(g)=|g|^2_{\mathcal{G}}$.</p>
+
+<p>what is the new form after applying the inf-convolution theorem?</p>
+
+<p>need $ \int g(x)\,\text{d}x = \int \langle g, \psi_x\rangle\,\text{d}x $ ?</p>
 
             </div>
         </div>
@@ -81,6 +161,10 @@
     </div>
 </div>
     <br>
+        
+
+
+<br>
         <div class="card">
     <div class="card-content">
         <h1 class="title is-5"><i class="fa fa-sitemap" aria-hidden="true"></i> Categories</h1>

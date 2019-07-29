@@ -1,13 +1,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>2019-07 on Quanta</title>
-    <link>https://xyli1905.github.io/archives/2019-07/</link>
-    <description>Recent content in 2019-07 on Quanta</description>
+    <title>variational form on Quanta</title>
+    <link>https://xyli1905.github.io/tags/variational-form/</link>
+    <description>Recent content in variational form on Quanta</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 29 Jul 2019 10:24:47 -0700</lastBuildDate>
     
-        <atom:link href="https://xyli1905.github.io/archives/2019-07/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://xyli1905.github.io/tags/variational-form/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -22,24 +22,6 @@ where $P(x)$ is the distribution for $X$.
 function $-\log v$ is strictly convex, let $\phi$ be its conjugate dual function, then $-\log v = \underset{u\in\mathbb{R}}{\text{sup}}\left[uv - \phi(u)\right]$, $\phi(u) = -1 - \log(-u)$ for $u&amp;lt;0$ and $+\infty$ otherwise.
 using above, we have
 $$\begin{aligned} \int P(x)\log\frac{1}{P(x)}\,\text{d}x &amp;amp;= - \int P(x)\left(- \log\frac{1}{P(x)}\right)\,\text{d}x \\&amp;amp;= -\int P(x) \underset{f}{\text{sup}}\left[ f(x)\frac{1}{P(x)} - \phi(f) \right]\,\text{d}x \\&amp;amp;= -\underset{f}{\text{sup}}\left[ \int f(x)\,\text{d}x - \int \phi(f)P(x)\,\text{d}x\right] \\&amp;amp;= -\underset{f}{\text{sup}}\left[ \int f(x)\,\text{d}x - \mathbb{E}_{P}[\phi(f)]\right]\end{aligned}$$</description>
-    </item>
-    
-    <item>
-      <title>Equation KaTeX</title>
-      <link>https://xyli1905.github.io/2019/07/equation-katex/</link>
-      <pubDate>Sun, 28 Jul 2019 23:13:39 -0700</pubDate>
-      
-      <guid>https://xyli1905.github.io/2019/07/equation-katex/</guid>
-      <description>inline equation $\sum_i a_i$
-display model $$\int g(x)$$
-Integrate $$\int x^3 dx$$
-$$ \varphi = 1+\frac{1} {1+\frac{1} {1+\frac{1} {1+\cdots} } } $$
-fas $$\boxed{j=\begin{cases}f(x), &amp;amp;x&amp;gt;0\\g(x), &amp;amp;x&amp;lt;0\end{cases}}$$
-dafdsa $\underbrace{a+b+c}_{\text{note}}$
-$$x = \begin{cases} f(x)A, &amp;amp; x&amp;gt;B \\ g(x) &amp;amp; x&amp;lt;C \end{cases}$$
-$$\begin{aligned} f(x)A, &amp;amp; x&amp;gt;B \\ g(x) &amp;amp; x&amp;lt;C \end{aligned}$$
-$$ x = \begin{cases}a &amp;amp;\text{if } b \\c &amp;amp;\text{if } d\end{cases} $$
-$$\tag{1}\boxed{j=\begin{cases}f(x), &amp;amp;x&amp;gt;0\\g(x), &amp;amp;x&amp;lt;0\end{cases}}$$</description>
     </item>
     
   </channel>
