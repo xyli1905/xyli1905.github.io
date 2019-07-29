@@ -20,14 +20,5 @@
 $$ \varphi = 1+\frac{1} {1+\frac{1} {1+\frac{1} {1+\cdots} } } $$</description>
     </item>
     
-    <item>
-      <title>Git Update Test</title>
-      <link>http://xyli1905.github.io/1969/12/git-update-test/</link>
-      <pubDate>Wed, 31 Dec 1969 16:33:39 -0800</pubDate>
-      
-      <guid>http://xyli1905.github.io/1969/12/git-update-test/</guid>
-      <description> this is merely a test.  </description>
-    </item>
-    
   </channel>
 </rss>
