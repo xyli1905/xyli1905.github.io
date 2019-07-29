@@ -18,22 +18,14 @@
       <guid>http://xyli1905.github.io/2019/07/equation-katex/</guid>
       <description>inline equation $\sum_i a_i$
 display model $$\int g(x)$$
+Integrate $$\int x^3 dx$$
+$$ \varphi = 1+\frac{1} {1+\frac{1} {1+\frac{1} {1+\cdots} } } $$
 fas $$\boxed{j=\begin{cases}f(x), &amp;amp;x&amp;gt;0\\g(x), &amp;amp;x&amp;lt;0\end{cases}}$$
 dafdsa $\underbrace{a+b+c}_{\text{note}}$
 $$x = \begin{cases} f(x)A, &amp;amp; x&amp;gt;B \\ g(x) &amp;amp; x&amp;lt;C \end{cases}$$
 $$\begin{aligned} f(x)A, &amp;amp; x&amp;gt;B \\ g(x) &amp;amp; x&amp;lt;C \end{aligned}$$
 $$ x = \begin{cases}a &amp;amp;\text{if } b \\c &amp;amp;\text{if } d\end{cases} $$
 $$\tag{1}\boxed{j=\begin{cases}f(x), &amp;amp;x&amp;gt;0\\g(x), &amp;amp;x&amp;lt;0\end{cases}}$$</description>
-    </item>
-    
-    <item>
-      <title>Test math expression with KaTeX</title>
-      <link>http://xyli1905.github.io/2019/07/test-math-expression/</link>
-      <pubDate>Sat, 27 Jul 2019 22:59:37 -0700</pubDate>
-      
-      <guid>http://xyli1905.github.io/2019/07/test-math-expression/</guid>
-      <description>INLINE $\int_{a}^{b} x^2 dx$ Integrate $$\int x^3 dx$$
-$$ \varphi = 1+\frac{1} {1+\frac{1} {1+\frac{1} {1+\cdots} } } $$</description>
     </item>
     
   </channel>
