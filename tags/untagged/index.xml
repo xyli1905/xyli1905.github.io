@@ -1,0 +1,23 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>untagged on Quanta</title>
+    <link>http://xyli1905.github.io/tags/untagged/</link>
+    <description>Recent content in untagged on Quanta</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 31 Dec 1969 16:33:39 -0800</lastBuildDate>
+    
+        <atom:link href="http://xyli1905.github.io/tags/untagged/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Git Update Test</title>
+      <link>http://xyli1905.github.io/1969/12/git-update-test/</link>
+      <pubDate>Wed, 31 Dec 1969 16:33:39 -0800</pubDate>
+      
+      <guid>http://xyli1905.github.io/1969/12/git-update-test/</guid>
+      <description> this is merely a test.  </description>
+    </item>
+    
+  </channel>
+</rss>
