@@ -6,7 +6,6 @@ html,body {
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
-    background-attachment: fixed;
     }
 .mysocial { color: hsl(0, 0%, 100%);}
 .mysocial:hover { color: hsl(0, 0%, 71%) }
