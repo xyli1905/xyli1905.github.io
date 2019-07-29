@@ -5,18 +5,18 @@
     <description>Recent content in untagged on Quanta</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 31 Dec 1969 16:33:39 -0800</lastBuildDate>
+    <lastBuildDate>Sun, 28 Jul 2019 22:37:34 -0700</lastBuildDate>
     
         <atom:link href="http://xyli1905.github.io/tags/untagged/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Git Update Test</title>
-      <link>http://xyli1905.github.io/1969/12/git-update-test/</link>
-      <pubDate>Wed, 31 Dec 1969 16:33:39 -0800</pubDate>
+      <title>Yet Another Post</title>
+      <link>http://xyli1905.github.io/2019/07/yet-another-post/</link>
+      <pubDate>Sun, 28 Jul 2019 22:37:34 -0700</pubDate>
       
-      <guid>http://xyli1905.github.io/1969/12/git-update-test/</guid>
-      <description> this is merely a test.  </description>
+      <guid>http://xyli1905.github.io/2019/07/yet-another-post/</guid>
+      <description> test date display  </description>
     </item>
     
   </channel>

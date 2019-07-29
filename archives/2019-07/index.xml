@@ -5,10 +5,19 @@
     <description>Recent content in 2019-07 on Quanta</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 27 Jul 2019 22:59:37 -0700</lastBuildDate>
+    <lastBuildDate>Sun, 28 Jul 2019 22:37:34 -0700</lastBuildDate>
     
         <atom:link href="http://xyli1905.github.io/archives/2019-07/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Yet Another Post</title>
+      <link>http://xyli1905.github.io/2019/07/yet-another-post/</link>
+      <pubDate>Sun, 28 Jul 2019 22:37:34 -0700</pubDate>
+      
+      <guid>http://xyli1905.github.io/2019/07/yet-another-post/</guid>
+      <description> test date display  </description>
+    </item>
     
     <item>
       <title>Test math expression with KaTeX</title>
