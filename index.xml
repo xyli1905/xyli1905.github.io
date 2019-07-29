@@ -46,24 +46,6 @@ $$\begin{aligned} \int P(x)\log\frac{1}{P(x)}\,\text{d}x &amp;amp;= - \int P(x)\
     </item>
     
     <item>
-      <title>Equation KaTeX</title>
-      <link>https://xyli1905.github.io/2019/07/equation-katex/</link>
-      <pubDate>Sun, 28 Jul 2019 23:13:39 -0700</pubDate>
-      
-      <guid>https://xyli1905.github.io/2019/07/equation-katex/</guid>
-      <description>inline equation $\sum_i a_i$
-display model $$\int g(x)$$
-Integrate $$\int x^3 dx$$
-$$ \varphi = 1+\frac{1} {1+\frac{1} {1+\frac{1} {1+\cdots} } } $$
-fas $$\boxed{j=\begin{cases}f(x), &amp;amp;x&amp;gt;0\\g(x), &amp;amp;x&amp;lt;0\end{cases}}$$
-dafdsa $\underbrace{a+b+c}_{\text{note}}$
-$$x = \begin{cases} f(x)A, &amp;amp; x&amp;gt;B \\ g(x) &amp;amp; x&amp;lt;C \end{cases}$$
-$$\begin{aligned} f(x)A, &amp;amp; x&amp;gt;B \\ g(x) &amp;amp; x&amp;lt;C \end{aligned}$$
-$$ x = \begin{cases}a &amp;amp;\text{if } b \\c &amp;amp;\text{if } d\end{cases} $$
-$$\tag{1}\boxed{j=\begin{cases}f(x), &amp;amp;x&amp;gt;0\\g(x), &amp;amp;x&amp;lt;0\end{cases}}$$</description>
-    </item>
-    
-    <item>
       <title>About Hugo</title>
       <link>https://xyli1905.github.io/about/</link>
       <pubDate>Wed, 09 Apr 2014 00:00:00 +0000</pubDate>
