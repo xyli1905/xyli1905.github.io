@@ -17,7 +17,9 @@
       
       <guid>http://xyli1905.github.io/2019/07/equation-katex/</guid>
       <description>inline equation $\sum_i a_i$
-display model $$\int g(x)$$</description>
+display model $$\int g(x)$$
+$$\boxed{j=\left{\begin{aligned}f(x), &amp;amp;x&amp;gt;0\g(x), &amp;amp;x&amp;lt;0\end{aligned}\right.}$$
+$\underbrace{a+b+c}_{\text{note}}$</description>
     </item>
     
     <item>
