@@ -5,7 +5,7 @@
     <description>Recent content in Posts on Quanta</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 29 Jul 2019 12:13:19 -0700</lastBuildDate>
+    <lastBuildDate>Mon, 29 Jul 2019 10:24:47 -0700</lastBuildDate>
     
         <atom:link href="https://xyli1905.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
@@ -29,15 +29,6 @@ We&amp;rsquo;ll start with creating a new site with a very basic template.</desc
       <description>Move static content to static Jekyll has a rule that any directory not starting with _ will be copied as-is to the _site output. Hugo keeps all static content under static. You should therefore move it all there. With Jekyll, something that looked like
 ▾ &amp;lt;root&amp;gt;/ ▾ images/ logo.png  should become
 ▾ &amp;lt;root&amp;gt;/ ▾ static/ ▾ images/ logo.png  Additionally, you&amp;rsquo;ll want any files that should reside at the root (such as CNAME) to be moved to static.</description>
-    </item>
-    
-    <item>
-      <title>It Is Weekend</title>
-      <link>https://xyli1905.github.io/2019/07/it-is-weekend/</link>
-      <pubDate>Mon, 29 Jul 2019 12:13:19 -0700</pubDate>
-      
-      <guid>https://xyli1905.github.io/2019/07/it-is-weekend/</guid>
-      <description>just need to write something down for testing</description>
     </item>
     
     <item>
