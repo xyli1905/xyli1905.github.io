@@ -37,7 +37,7 @@ We&amp;rsquo;ll start with creating a new site with a very basic template.</desc
       <pubDate>Mon, 29 Jul 2019 10:24:47 -0700</pubDate>
       
       <guid>https://xyli1905.github.io/2019/07/variational-form-for-hx/</guid>
-      <description>for continuum random variable $X$, the differential entropy id defined as
+      <description>For continuum random variable $X$, the differential entropy id defined as
 $$\int P(x)\log\dfrac{1}{P(x)}\,\text{d}x,\tag{1}$$
 where $P(x)$ is the distribution for $X$.
 function $-\log v$ is strictly convex, let $\phi$ be its conjugate dual function, then $-\log v = \underset{u\in\mathbb{R}}{\text{sup}}\left[uv - \phi(u)\right]$, $\phi(u) = -1 - \log(-u)$ for $u&amp;lt;0$ and $+\infty$ otherwise.
