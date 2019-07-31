@@ -13,7 +13,29 @@
     <link rel="stylesheet" href="https://xyli1905.github.io/css/blog.css" />
     
     <link rel="alternate" type="application/rss&#43;xml" href="https://xyli1905.github.io/archives/index.xml">
-    </head>
+    
+    <style>
+        .search {
+            position: relative;
+            display: inline-block;
+            }
+        .search-results {
+            display: none;
+            background-color: #fff;
+            position: absolute;
+            min-width: 100px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            }
+        .search-results a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            }
+        .search-results a:hover {background-color: #ddd;}
+    </style>
+</head>
 <body>
 
     
@@ -23,6 +45,31 @@
             <a class="navbar-item" href="https://xyli1905.github.io/">Home</a>
             <a class="navbar-item" href="https://xyli1905.github.io/about">About</a>
             <a class="navbar-item" href="https://github.com/xyli1905/DeepInfoFlow" target="_blank" rel="noopener noreferrer">DeepInfoFlow_Git</a>
+        </div>
+        <div id="mainNavbar" class="navbar-menu is-active">
+            
+                
+            <div class="navbar-end">
+                
+                <div id="search" class="navbar-item">
+                    <div id="baseurl" data-url="https://xyli1905.github.io/"></div>
+                    <div class="dropdown">
+                        <div class="dropdown-trigger">
+                            <div aria-haspopup="true" aria-controls="dropdown-menu6" class="control has-icons-right">
+                                <input type="text" placeholder="Search site..." maxlength="50" class="input is-rounded">
+                                <div class="search-results" :style="{'display': showresult?'block':'none'}">
+                                    <a v-for="item in result" :href="item.url">{{ item.title }}</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="dropdown-menu6" role="menu" class="dropdown-menu">
+                            <div class="dropdown-content">
+                                <div class="dropdown-item"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </nav>
     
@@ -163,7 +210,74 @@
     </div>
 </footer>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.min.js" integrity="sha256-FtWfRI+thWlNz2sB3SJbwKx5PgMyKIVgwHCTwa3biXc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js" integrity="sha256-mpnrJ5DpEZZkwkE1ZgkEQQJW/46CSEh/STrZKOB/qoM=" crossorigin="anonymous"></script>
+
+
+<script>
+    let vuesearch = new Vue({
+        el: '#search', 
+        data: {
+            txt: '', 
+            timeoutID: 0, 
+            showresult: false, 
+            result: {}, 
+            bdd: [] 
+            },
+        mounted: function() {
+            
+            axios.get('https:\/\/xyli1905.github.io\/search\/index.json')
+            .then(function (response) {
+                vuesearch.bdd = response.data.results;
+                })
+            .catch(function (error) {
+                console.log(error);
+                });
+            },
+        methods: {
+            close: function() {
+                
+                
+                setTimeout(function() {
+                    vuesearch.showresult = false;
+                    vuesearch.txt = '';
+                    }, 300);
+                },
+            search: function() {
+                
+                clearTimeout(this.timeoutID);
+                this.timeoutID = setTimeout(this.dosearch, 500);
+                },
+            dosearch: function() {
+                
+                this.result = []; 
+                let words = this.txt.split(' '); 
+                let words2 = []; 
+                words.forEach(function(element) { 
+                    if(element) {words2.push(element);}
+                    });
+                let r;
+                let resultmp;
+                words2.forEach(function(e) { 
+                    r = vuesearch.bdd.filter(p => p.content.indexOf(e.toLowerCase()) !== -1);
+                    if(vuesearch.result.length===0) {vuesearch.result = r.slice(); return;}
+                    resultmp = [];
+                    vuesearch.result.forEach(function(all1) {
+                        r.forEach(function(all2) { 
+                            if(all1.url===all2.url) {resultmp.push(all1);}
+                            });
+                        });
+                    vuesearch.result = resultmp.slice();
+                    });
+                this.result = this.result.slice(0, 10); 
+                this.showresult = (this.result.length>0); 
+            } 
+        } 
+    }); 
+</script>
 <script defer src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"></script>
+
+
 </body>
 
 <!doctype html>
