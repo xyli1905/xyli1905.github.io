@@ -50,12 +50,13 @@
         <div id="mainNavbar" class="navbar-menu">
             <div class="navbar-end">
                 
+                
                 <div class="navbar-item" id="search">
                     <div id="baseurl" data-url="https://xyli1905.github.io/"></div>
                     <div :class="{'dropdown': true, 'is-active':showresult}">
                         <div class="dropdown-trigger">
                             <div class="control has-icons-right" aria-haspopup="true" aria-controls="dropdown-menu6">
-                                <input class="input is-rounded" type="text" placeholder="Search site..." v-model="txt" @keyup="search()" @blur="close()" maxlength="50">
+                                <input class="input is-rounded" style="width: 287px;" type="text" placeholder="&#XF002; Search site..." v-model="txt" @keyup="search()" @blur="close()" maxlength="50">
                             </div>
                         </div>
                         <div class="dropdown-menu" id="dropdown-menu6" role="menu">
