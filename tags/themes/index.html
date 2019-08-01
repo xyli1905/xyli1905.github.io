@@ -45,26 +45,24 @@
             <a class="navbar-item" href="https://xyli1905.github.io/">Home</a>
             <a class="navbar-item" href="https://xyli1905.github.io/about">About</a>
             <a class="navbar-item" href="https://github.com/xyli1905/DeepInfoFlow" target="_blank" rel="noopener noreferrer">DeepInfoFlow_Git</a>
-        </div>
-        <div id="mainNavbar" class="navbar-menu is-active">
             
-                
+        </div>
+        <div id="mainNavbar" class="navbar-menu">
             <div class="navbar-end">
                 
-                <div id="search" class="navbar-item">
+                <div class="navbar-item" id="search">
                     <div id="baseurl" data-url="https://xyli1905.github.io/"></div>
-                    <div class="dropdown">
+                    <div :class="{'dropdown': true, 'is-active':showresult}">
                         <div class="dropdown-trigger">
-                            <div aria-haspopup="true" aria-controls="dropdown-menu6" class="control has-icons-right">
-                                <input type="text" placeholder="Search site..." maxlength="50" class="input is-rounded">
-                                <div class="search-results" :style="{'display': showresult?'block':'none'}">
-                                    <a v-for="item in result" :href="item.url">{{ item.title }}</a>
-                                </div>
+                            <div class="control has-icons-right" aria-haspopup="true" aria-controls="dropdown-menu6">
+                                <input class="input is-rounded" type="text" placeholder="Search site..." v-model="txt" @keyup="search()" @blur="close()" maxlength="50">
                             </div>
                         </div>
-                        <div id="dropdown-menu6" role="menu" class="dropdown-menu">
+                        <div class="dropdown-menu" id="dropdown-menu6" role="menu">
                             <div class="dropdown-content">
-                                <div class="dropdown-item"></div>
+                                <div class="dropdown-item">
+                                    <a v-for="item in result" :href="item.url" class="dropdown-item">item.title</a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -76,7 +74,6 @@
 
     
     <section class="hero is-info is-medium">
-        
         <div class="hero-body" style="background-image: url(https://xyli1905.github.io/img/calm.jpg); background-position: center center;">
             <div class="container has-text-centered">
                 <br>
@@ -278,14 +275,14 @@ This document is a brief primer on using Go templates.</p>
             Copyright &copy; Quanta 2019 - Theme by <a href="https://jeffprod.com" class="mysocial">JeffProd.com</a>
             - Modified by Xingyu Li
             </span>
-            
         </p>
     </div>
 </footer>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.min.js" integrity="sha256-FtWfRI+thWlNz2sB3SJbwKx5PgMyKIVgwHCTwa3biXc=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js" integrity="sha256-mpnrJ5DpEZZkwkE1ZgkEQQJW/46CSEh/STrZKOB/qoM=" crossorigin="anonymous"></script>
 
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
 
 <script>
     let vuesearch = new Vue({
@@ -298,6 +295,7 @@ This document is a brief primer on using Go templates.</p>
             bdd: [] 
             },
         mounted: function() {
+            
             
             axios.get('https:\/\/xyli1905.github.io\/search\/index.json')
             .then(function (response) {
@@ -333,6 +331,7 @@ This document is a brief primer on using Go templates.</p>
                 let resultmp;
                 words2.forEach(function(e) { 
                     r = vuesearch.bdd.filter(p => p.content.indexOf(e.toLowerCase()) !== -1);
+                    
                     if(vuesearch.result.length===0) {vuesearch.result = r.slice(); return;}
                     resultmp = [];
                     vuesearch.result.forEach(function(all1) {
