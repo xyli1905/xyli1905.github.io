@@ -61,7 +61,7 @@
                         <div class="dropdown-menu" id="dropdown-menu6" role="menu">
                             <div class="dropdown-content">
                                 <div class="dropdown-item">
-                                    <a v-for="item in result" :href="item.url" class="dropdown-item">item.title</a>
+                                    <a v-for="item in result" :href="item.url" class="dropdown-item">{{ item.title }}</a>
                                 </div>
                             </div>
                         </div>
@@ -242,7 +242,6 @@ We&rsquo;ll start with creating a new site with a very basic template.</p>
 </footer>
 
 
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
 
@@ -258,10 +257,9 @@ We&rsquo;ll start with creating a new site with a very basic template.</p>
             },
         mounted: function() {
             
-            
             axios.get('https:\/\/xyli1905.github.io\/search\/index.json')
             .then(function (response) {
-                vuesearch.bdd = response.data.results;
+                 vuesearch.bdd = response.data.results
                 })
             .catch(function (error) {
                 console.log(error);
@@ -291,6 +289,7 @@ We&rsquo;ll start with creating a new site with a very basic template.</p>
                     });
                 let r;
                 let resultmp;
+                console.log()
                 words2.forEach(function(e) { 
                     r = vuesearch.bdd.filter(p => p.content.indexOf(e.toLowerCase()) !== -1);
                     
@@ -310,8 +309,6 @@ We&rsquo;ll start with creating a new site with a very basic template.</p>
     }); 
 </script>
 <script defer src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"></script>
-
-
 </body>
 
 <!doctype html>

@@ -60,7 +60,7 @@
                         <div class="dropdown-menu" id="dropdown-menu6" role="menu">
                             <div class="dropdown-content">
                                 <div class="dropdown-item">
-                                    <a v-for="item in result" :href="item.url" class="dropdown-item">item.title</a>
+                                    <a v-for="item in result" :href="item.url" class="dropdown-item">{{ item.title }}</a>
                                 </div>
                             </div>
                         </div>
@@ -434,7 +434,6 @@ Liquid::Template.register_tag('image', Jekyll::ImageTag)
 </footer>
 
 
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
 
@@ -450,10 +449,9 @@ Liquid::Template.register_tag('image', Jekyll::ImageTag)
             },
         mounted: function() {
             
-            
             axios.get('https:\/\/xyli1905.github.io\/search\/index.json')
             .then(function (response) {
-                vuesearch.bdd = response.data.results;
+                 vuesearch.bdd = response.data.results
                 })
             .catch(function (error) {
                 console.log(error);
@@ -483,6 +481,7 @@ Liquid::Template.register_tag('image', Jekyll::ImageTag)
                     });
                 let r;
                 let resultmp;
+                console.log()
                 words2.forEach(function(e) { 
                     r = vuesearch.bdd.filter(p => p.content.indexOf(e.toLowerCase()) !== -1);
                     
@@ -502,8 +501,6 @@ Liquid::Template.register_tag('image', Jekyll::ImageTag)
     }); 
 </script>
 <script defer src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"></script>
-
-
 </body>
 
 <!doctype html>
