@@ -38,17 +38,21 @@
 <body>
 
     
-    <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+    <nav class="navbar is-fixed-top" id="navBar" role="navigation" aria-label="main navigation" style="border-bottom:1px solid #d3d3d3">
         <div class="navbar-brand">
             <a class="navbar-item"><img src="https://xyli1905.github.io/img/signature-symbol.png"></a>
             <a class="navbar-item" href="https://xyli1905.github.io/">Home</a>
             <a class="navbar-item" href="https://xyli1905.github.io/about">About</a>
             <a class="navbar-item" href="https://github.com/xyli1905/DeepInfoFlow" target="_blank" rel="noopener noreferrer">DeepInfoFlow_Git</a>
-            
+            <a role="button" class="navbar-burger" onclick="document.querySelector('.navbar-menu').classList.toggle('is-active');" data-target="mainNavbar" aria-label="menu" aria-expanded="false">
+                <span aria-hidden="true"></span> 
+                <span aria-hidden="true"></span> 
+                <span aria-hidden="true"></span>
+                
+            </a>
         </div>
         <div id="mainNavbar" class="navbar-menu">
             <div class="navbar-end">
-                
                 
                 <div class="navbar-item" id="search">
                     <div id="baseurl" data-url="https://xyli1905.github.io/"></div>
@@ -120,7 +124,7 @@
             <br><br>
             <span style="font-weight:italic">
             Copyright &copy; Quanta 2019 - Theme by <a href="https://jeffprod.com" class="mysocial">JeffProd.com</a>
-            - Modified by Xingyu Li
+            - with Modifications
             </span>
         </p>
     </div>
@@ -193,6 +197,7 @@
         } 
     }); 
 </script>
+
 <script defer src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"></script>
 </body>
 
@@ -216,7 +221,8 @@
                 delimiters: [
                     {left: "$$", right: "$$", display: true},
                     {left: "$", right: "$", display: false}
-                ]
+                ],
+                newLineInDisplayMode: true
             }
         );
     </script>

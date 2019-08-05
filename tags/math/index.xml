@@ -5,10 +5,20 @@
     <description>Recent content in math on Quanta</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 29 Jul 2019 10:24:47 -0700</lastBuildDate>
+    <lastBuildDate>Thu, 01 Aug 2019 12:48:05 -0700</lastBuildDate>
     
         <atom:link href="https://xyli1905.github.io/tags/math/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Neural Tangent Kernel and NN Dynamics</title>
+      <link>https://xyli1905.github.io/2019/08/neural-tangent-kernel-and-nn-dynamics/</link>
+      <pubDate>Thu, 01 Aug 2019 12:48:05 -0700</pubDate>
+      
+      <guid>https://xyli1905.github.io/2019/08/neural-tangent-kernel-and-nn-dynamics/</guid>
+      <description>Discussion on Neural Tangent Kernel The Neural Tangent Kernel is introduced by Arthur Jacot et. al. to study the dynamics of a (S)GD-based learning model, say, the Neural Network. It is expected to enable one to &amp;ldquo;study the training of ANNs in the functional space $\mathcal{F}$, on which the cost $C$ is convex.&amp;rdquo;
+In the following, we will review the derivations of Arthur Jacot et. al. and argue that by definition the Neural Tangent Kernel only captures the first order dynamics of the Neural Networks.</description>
+    </item>
     
     <item>
       <title>Variational Form for H(x)</title>

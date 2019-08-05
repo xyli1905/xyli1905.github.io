@@ -5,10 +5,37 @@
     <description>Recent content in Tags on Quanta</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 29 Jul 2019 10:24:47 -0700</lastBuildDate>
+    <lastBuildDate>Thu, 01 Aug 2019 12:48:05 -0700</lastBuildDate>
     
         <atom:link href="https://xyli1905.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>dynamics</title>
+      <link>https://xyli1905.github.io/tags/dynamics/</link>
+      <pubDate>Thu, 01 Aug 2019 12:48:05 -0700</pubDate>
+      
+      <guid>https://xyli1905.github.io/tags/dynamics/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>math</title>
+      <link>https://xyli1905.github.io/tags/math/</link>
+      <pubDate>Thu, 01 Aug 2019 12:48:05 -0700</pubDate>
+      
+      <guid>https://xyli1905.github.io/tags/math/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>neural network</title>
+      <link>https://xyli1905.github.io/tags/neural-network/</link>
+      <pubDate>Thu, 01 Aug 2019 12:48:05 -0700</pubDate>
+      
+      <guid>https://xyli1905.github.io/tags/neural-network/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>information theory</title>
@@ -16,15 +43,6 @@
       <pubDate>Mon, 29 Jul 2019 10:24:47 -0700</pubDate>
       
       <guid>https://xyli1905.github.io/tags/information-theory/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>math</title>
-      <link>https://xyli1905.github.io/tags/math/</link>
-      <pubDate>Mon, 29 Jul 2019 10:24:47 -0700</pubDate>
-      
-      <guid>https://xyli1905.github.io/tags/math/</guid>
       <description></description>
     </item>
     

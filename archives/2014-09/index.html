@@ -39,17 +39,21 @@
 <body>
 
     
-    <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+    <nav class="navbar is-fixed-top" id="navBar" role="navigation" aria-label="main navigation" style="border-bottom:1px solid #d3d3d3">
         <div class="navbar-brand">
             <a class="navbar-item"><img src="https://xyli1905.github.io/img/signature-symbol.png"></a>
             <a class="navbar-item" href="https://xyli1905.github.io/">Home</a>
             <a class="navbar-item" href="https://xyli1905.github.io/about">About</a>
             <a class="navbar-item" href="https://github.com/xyli1905/DeepInfoFlow" target="_blank" rel="noopener noreferrer">DeepInfoFlow_Git</a>
-            
+            <a role="button" class="navbar-burger" onclick="document.querySelector('.navbar-menu').classList.toggle('is-active');" data-target="mainNavbar" aria-label="menu" aria-expanded="false">
+                <span aria-hidden="true"></span> 
+                <span aria-hidden="true"></span> 
+                <span aria-hidden="true"></span>
+                
+            </a>
         </div>
         <div id="mainNavbar" class="navbar-menu">
             <div class="navbar-end">
-                
                 
                 <div class="navbar-item" id="search">
                     <div id="baseurl" data-url="https://xyli1905.github.io/"></div>
@@ -142,6 +146,9 @@ We&rsquo;ll start with creating a new site with a very basic template.</p>
     <div class="card-content">
         <h1 class="title is-5"><i class="fa fa-file" aria-hidden="true"></i> Recent posts</h1>
         
+            <h1><a href="https://xyli1905.github.io/2019/08/neural-tangent-kernel-and-nn-dynamics/">Neural Tangent Kernel and NN Dynamics</a></h1>
+            <time class="has-text-grey-light is-size-7">1 August 2019</time>
+        
             <h1><a href="https://xyli1905.github.io/2019/07/variational-form-for-hx/">Variational Form for H(x)</a></h1>
             <time class="has-text-grey-light is-size-7">29 July 2019</time>
         
@@ -153,9 +160,6 @@ We&rsquo;ll start with creating a new site with a very basic template.</p>
         
             <h1><a href="https://xyli1905.github.io/2014/04/goisforlovers/">(Hu)go Template Primer</a></h1>
             <time class="has-text-grey-light is-size-7">2 April 2014</time>
-        
-            <h1><a href="https://xyli1905.github.io/2014/03/migrate-from-jekyll/">Migrate to Hugo from Jekyll</a></h1>
-            <time class="has-text-grey-light is-size-7">10 March 2014</time>
         
     </div>
 </div>
@@ -175,6 +179,11 @@ We&rsquo;ll start with creating a new site with a very basic template.</p>
 				<li class="category"><a href="https://xyli1905.github.io/categories/hugo">hugo</a> (4)</li>
 			</ul>
         
+			
+			<ul style="list-style: none;">
+				<li class="category"><a href="https://xyli1905.github.io/categories/noise-and-generalization">noise-and-generalization</a> (1)</li>
+			</ul>
+        
         </div>          
     </div>
 </div><br>
@@ -183,9 +192,13 @@ We&rsquo;ll start with creating a new site with a very basic template.</p>
         <h1 class="title is-5"><i class="fa fa-tag" aria-hidden="true"></i> Tags</h1>
         <div class="tags">
         
+            <span class="tag"><a href="https://xyli1905.github.io/tags/dynamics">dynamics</a>(1)</span>
+        
             <span class="tag"><a href="https://xyli1905.github.io/tags/information-theory">information-theory</a>(1)</span>
         
-            <span class="tag"><a href="https://xyli1905.github.io/tags/math">math</a>(1)</span>
+            <span class="tag"><a href="https://xyli1905.github.io/tags/math">math</a>(2)</span>
+        
+            <span class="tag"><a href="https://xyli1905.github.io/tags/neural-network">neural-network</a>(1)</span>
         
             <span class="tag"><a href="https://xyli1905.github.io/tags/templates">templates</a>(1)</span>
         
@@ -201,6 +214,8 @@ We&rsquo;ll start with creating a new site with a very basic template.</p>
         <div class="card">
     <div class="card-content">
         <h1 class="title is-5"><i class="fa fa-archive" aria-hidden="true"></i> Archives</h1>
+        
+            <a href="https://xyli1905.github.io/archives/2019-08">2019-08</a> (1)<br>
         
             <a href="https://xyli1905.github.io/archives/2019-07">2019-07</a> (1)<br>
         
@@ -236,7 +251,7 @@ We&rsquo;ll start with creating a new site with a very basic template.</p>
             <br><br>
             <span style="font-weight:italic">
             Copyright &copy; Quanta 2019 - Theme by <a href="https://jeffprod.com" class="mysocial">JeffProd.com</a>
-            - Modified by Xingyu Li
+            - with Modifications
             </span>
         </p>
     </div>
@@ -309,6 +324,7 @@ We&rsquo;ll start with creating a new site with a very basic template.</p>
         } 
     }); 
 </script>
+
 <script defer src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"></script>
 </body>
 
@@ -332,7 +348,8 @@ We&rsquo;ll start with creating a new site with a very basic template.</p>
                 delimiters: [
                     {left: "$$", right: "$$", display: true},
                     {left: "$", right: "$", display: false}
-                ]
+                ],
+                newLineInDisplayMode: true
             }
         );
     </script>

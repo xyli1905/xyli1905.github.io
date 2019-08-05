@@ -12,7 +12,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css" />
     <link rel="stylesheet" href="https://xyli1905.github.io/css/blog.css" />
     
-    <link rel="alternate" type="application/rss&#43;xml" href="https://xyli1905.github.io/categories/deepinfoflow/index.xml">
     
     <style>
         .search {
@@ -84,7 +83,7 @@
                 <br>
                 <h1 class="title is-size-1">
                     
-                        DeepInfoFlow </br>
+                        Neural Tangent Kernel and NN Dynamics </br>
                         <h6>SCIENCE, REFLECTION, PROJECTS</h6>
                     
                 </h1>
@@ -98,54 +97,165 @@
     <div class="section">
     
 
-
+<header>
+    <div class="title">
+        <h1>Neural Tangent Kernel and NN Dynamics</h1>
+    </div>
+    <div class="meta">
+        August 1, 2019 &middot;
+        
+            <i class="fa fa-user" aria-hidden="true"></i> Xingyu Li &middot;
+        
+        
+            <i class="fa fa-sitemap" aria-hidden="true"></i>
+            
+                <span class="category"><a href="https://xyli1905.github.io/categories/noise-and-generalization">Noise and Generalization</a></span>
+            
+            &middot;
+        
+        
+            <i class="fa fa-tag" aria-hidden="true"></i>
+            
+                <span class="tag"><a href="https://xyli1905.github.io/tags/math">math</a></span>
+            
+                <span class="tag"><a href="https://xyli1905.github.io/tags/neural-network">neural network</a></span>
+            
+                <span class="tag"><a href="https://xyli1905.github.io/tags/dynamics">dynamics</a></span>
+            
+            &middot;
+        
+        <i class="far fa-clock"></i>&nbsp;7 min read
+    </div>
+    </br>
+</header>
 
 <div class="columns">
     <div class="column is-9">
         <div class="tile is-child box">
             <div class="content">
+                
 
-                <article class="media">
-                    <div class="media-content">
-                        <div class="content">
-                            <p class="title is-4"><a href="https://xyli1905.github.io/2019/07/variational-form-for-hx/">Variational Form for H(x)</a></p>
-                            <p class="subtitle is-size-6 has-text-grey-light">
-                                July 29, 2019 &middot;
-                                
-                                    <i class="fa fa-user" aria-hidden="true"></i> Xingyu Li &middot;
-                                
-                                
-                                    <i class="fa fa-sitemap" aria-hidden="true"></i>
-                                    
-                                        <span class="category"><a href="https://xyli1905.github.io/categories/deepinfoflow">DeepInfoFlow</a></span>
-                                    
-                                    &middot;
-                                
-                                
-                                    <i class="fa fa-tag" aria-hidden="true"></i>
-                                    
-                                        <span class="tag"><a href="https://xyli1905.github.io/tags/information-theory">information theory</a></span>
-                                    
-                                        <span class="tag"><a href="https://xyli1905.github.io/tags/math">math</a></span>
-                                    
-                                        <span class="tag"><a href="https://xyli1905.github.io/tags/variational-form">variational form</a></span>
-                                    
-                                    &middot;
-                                
-                                <i class="far fa-clock"></i>&nbsp;2 min read
-                            </p>
-                            <p>For continuum random variable $X$, the differential entropy id defined as
-$$\int P(x)\log\dfrac{1}{P(x)}\,\text{d}x,\tag{1}$$
-where $P(x)$ is the distribution for $X$.
-function $-\log v$ is strictly convex, let $\phi$ be its conjugate dual function, then $-\log v = \underset{u\in\mathbb{R}}{\text{sup}}\left[uv - \phi(u)\right]$, $\phi(u) = -1 - \log(-u)$ for $u&lt;0$ and $+\infty$ otherwise.
-using above, we have
-$$\begin{aligned} \int P(x)\log\frac{1}{P(x)}\,\text{d}x &amp;= - \int P(x)\left(- \log\frac{1}{P(x)}\right)\,\text{d}x \\&amp;= -\int P(x) \underset{f}{\text{sup}}\left[ f(x)\frac{1}{P(x)} - \phi(f) \right]\,\text{d}x \\&amp;= -\underset{f}{\text{sup}}\left[ \int f(x)\,\text{d}x - \int \phi(f)P(x)\,\text{d}x\right] \\&amp;= -\underset{f}{\text{sup}}\left[ \int f(x)\,\text{d}x - \mathbb{E}_{P}[\phi(f)]\right]\end{aligned}$$</p>
-                            <a href="https://xyli1905.github.io/2019/07/variational-form-for-hx/" class="button big">Read More</a>
-                        </div>
-                    </div>
-                </article>
-                <br>
+<h2 id="discussion-on-neural-tangent-kernel">Discussion on Neural Tangent Kernel</h2>
 
+<p>The Neural Tangent Kernel is introduced by <a href="https://arxiv.org/pdf/1806.07572.pdf">Arthur Jacot et. al.</a> to study the dynamics of a (S)GD-based learning model, say, the Neural Network. It is expected to enable one to &ldquo;study the training of ANNs in the functional space $\mathcal{F}$, on which the cost $C$ is convex.&rdquo;</p>
+
+<p>In the following, we will review the derivations of Arthur Jacot et. al. and argue that by definition the Neural Tangent Kernel only captures the first order dynamics of the Neural Networks. In order to be practical, one needs to include higher order kernels.</p>
+
+<h3 id="basic-definitions">Basic Definitions</h3>
+
+<ul>
+<li>Let $f(x, \theta): \mathbb{R}^n\otimes\mathbb{R}^p\rightarrow\mathbb{R}^m$ be the function learned by the model, where $x\in\mathbb{R^n}$ is the input feature and $\theta\in\mathbb{R}^p$ is the parameter vector. The output is an encoding of the input features in the space $\mathbb{R}^m$. This function belongs to the functional space $\mathcal{F}$.</li>
+<li>Let $\mathbb{C}$ be the cost function. We will view it as a functional: $\mathbb{C}: \mathcal{F}\rightarrow\mathbb{R}$. This is well defined since, in practice, the training dataset ${(x_i, y_i)}$ is fixed during training, hence the cost is determined by the learned function $f$.
+
+<ul>
+<li>Let $\mathcal{L}$ be the loss function, one have $\mathbb{C}=\frac{1}{N}\sum_i\mathcal{L}(f(x_i,\theta), y_i)$, where $N$ is the training dataset size.</li>
+</ul></li>
+<li>To investigate the evolution and convergence of the learning process, one is obligated to trace the variation of $f$ and $\mathbb{C}$ along learning iterations, which serves as the time dimension of the learning process.
+
+<ul>
+<li>Note both $f$ and $\mathbb{C}$ depend on $t$ through $\theta$, which updates according to (S)GD.</li>
+<li>The time scale is related to the magnitude of the learning rate $\eta$.</li>
+</ul></li>
+</ul>
+
+<h3 id="kernel-gradient-and-neural-tangent-kernel">Kernel Gradient and Neural Tangent Kernel</h3>
+
+<p>To study the training process, Arthur Jacot et. al. focus on the behavior of $\partial_t f$ and $\partial_t \mathbb{C}$. They first introduce a seminorm $|\cdot| _{p ^{in}}$, which is defined in term of the bilinear form</p>
+
+<p>$$\langle f, g\rangle _{p ^{in}} = \mathbb{E} _{p ^{in}}[f(x)^T g(x)],$$</p>
+
+<p>where $p ^{in}$ is the empirical distribution on the training dataset, i.e. $\frac{1}{N}\sum_i \delta _{x_i}$. Hence,</p>
+
+<p>$$\langle f, g\rangle _{p ^{in}} = \frac{1}{N}\sum_i f(x_i)\cdot g(x_i).$$</p>
+
+<p>In this way, they can form a dual functional space $\mathcal{F}^*$ of $\mathcal{F}$, whose elements are linear forms $\mu: \mathcal{F}\rightarrow \mathbb{R}$ of form $\mu=\langle d, \cdot\rangle _{p ^{in}}$ for some $d\in \mathcal{F}$.</p>
+
+<p>Note that the functional derivative of $\mathbb{C}$ at point $f_0$ (i.e. model function at $t_0$) can be viewed as an element of $\mathcal{F}^*$. In fact, let $\alpha$ be any parameter of $f$, then</p>
+
+<p>$$\begin{aligned}\partial _\alpha \mathbb{C}| _{f_0} &amp;= \frac{1}{N}\sum_i \partial_f \mathcal{L}(f_0)\cdot \partial _\alpha f_0 \\ &amp;=\partial_f\mathbb{C}| _{f_0}* \partial _{\alpha}f_0,\end{aligned}$$</p>
+
+<p>where we use $\partial_f \mathbb{C}| _{f_0}$ to denote the functional derivative and introduce a special product symbol, $*$, at last step, in order to write the formula in a chain-rule like form. Note that we have abbreviated irrelevant variables in above formula. It is easy to see that &ldquo;$\partial_f \mathbb{C}| _{f_0} *$&rdquo; is a linear operator. Based on above observation, one may write $\partial_f \mathbb{C}| _{f_0} * =\langle d _{f_0}, \cdot\rangle _{p ^{in}}$ with a corresponding $d _{f_0}\in \mathcal{F}$.</p>
+
+<p>At this point, Arthur Jacot et. al. introduced the kernel gradient of the Neural Network model. Basically, a kernel is a function $K(x,x&rsquo;):\mathbb{R}^n\otimes\mathbb{R}^n\rightarrow\mathbb{R}^{m\times m}$, that maps a feature pair to a symmetric matrix. Since $K _{i;\cdot}(x, \cdot)$ is a function in $\mathcal{F}$, one can define a map $\Phi_K: \mathcal{F}^* \rightarrow \mathcal{F}$ mapping a dual element $\mu = \langle d, \cdot\rangle _{p ^{in}}$ to an element $f _\mu \in \mathcal{F}$ with components</p>
+
+<p>$$[\Phi_K(\mu)]_i = f _{\mu; i}(x)= \langle d, K _{i;\cdot}(x, \cdot)\rangle _{p ^{in}}.$$</p>
+
+<p>Now the Kernel gradient is defined by</p>
+
+<p>$$\begin{aligned}\nabla_K \mathbb{C}| _{f_0}(x)&amp;= \Phi_K(\partial_f \mathbb{C}| _{f_0})\\&amp;=\frac{1}{N}\sum_i K(x, x_i) d _{f_0}(x_i),\end{aligned}$$</p>
+
+<p>where, at the last step, we mean the matrix multiplication between $K$ and $d _{f_0}$. One would discover that there is a special kernel $\Theta(x, x&rsquo;)$ such that</p>
+
+<p>$$\partial_t f(x, \theta (t_0)) = - \nabla_K \mathbb{C}| _{f_0},$$</p>
+
+<p>as long as the model is updating according to (S)GD. Arthur Jacot et. al. call this $\Theta$ the Neural Tangent Kernel and show that it is defined as</p>
+
+<p>$$\Theta(x,x&rsquo;; \theta)=\sum_p \partial _{\theta_p}f(x,\theta)\otimes \partial _{\theta_p}f(x&rsquo;,\theta),$$</p>
+
+<p>where $p$ refers to the components of the model parameters. We will see the reason for choosing this definition in the next section.</p>
+
+<p>In addition, for $\partial_t \mathbb{C}$ one has</p>
+
+<p>$$\begin{aligned}\partial_t \mathbb{C}| _{f_0} &amp;= \partial_f \mathbb{C}| _{f_0}* \partial_t f(t_0)\\&amp;=-\frac{1}{N^2}\sum_i\sum_j d^T _{f_0}(x_i) \Theta(x_i, x_j) d _{f_0}(x_j).\end{aligned}$$</p>
+
+<p>Again, matrix multiplication is assumed. We see that as long as $\Theta$ is positive defined with respect to $p ^{in}$, the cost will always decrease.</p>
+
+<h3 id="first-order-dynamics">First Order Dynamics</h3>
+
+<p>To see what is going on under the fancy appearance of kernel representations, it is helpful to expand all the details of every steps. In doing so, we find that the Neural Tangent Kernel actually only captures the first order dynamics of the Nerual Network model.</p>
+
+<p>The (S)GD updating rule defines the dynamics of the model at each iteration:</p>
+
+<p>$$\begin{aligned}\Delta \theta_p(t_0) &amp;= -\eta \times\partial _{\theta_p} \mathbb{C}| _{f_0}\\&amp;=-\eta \times\frac{1}{N}\sum_i \partial_f\mathcal{L}(f_0(x_i,\theta), y_i)\cdot\partial _{\theta_p}f_0(x_i,\theta)\\&amp;=-\eta \times\partial_f\mathbb{C}| _{f_0}* \partial _{\theta_p}f_0,\end{aligned}$$</p>
+
+<p>where $\times$ indicates the scalar product. The derivatives are evaluated at epoch $t_0$ and corresponding model function is $f_0$. To emphesase function $f$ is an object in functional space $\mathcal{F}$, we also write $f_0(x,\theta)$ as $f(t_0)$.</p>
+
+<p>We are interested in the responses of $f$ and $\mathbb{C}$ with respect to the update:</p>
+
+<p>$$\begin{aligned}\Delta f(t_0) &amp;= f(t_0 + \Delta t) - f(t_0)\\&amp;=f(x, \theta(t_0)+\Delta\theta(t_0)) - f(x, \theta(t_0))\end{aligned}$$</p>
+
+<p>and</p>
+
+<p>$$\Delta \mathbb{C}(t_0) = \frac{1}{N}\sum_i\mathcal{L}(f(x_i,\theta(t_0)+\Delta\theta(t_0)) - \frac{1}{N}\sum_i\mathcal{L}(f(x_i,\theta(t_0)).$$</p>
+
+<p>In the limit $\eta \rightarrow 0^+$, $\Delta \theta_p \rightarrow 0$ (written as $\delta \theta_p$ instead). Thus we only need to consider the <strong>first-order</strong> derivatives with respect to $\theta_p$ in $\Delta f$ and $\Delta \mathbb{C}$. Namely,</p>
+
+<p>$$\begin{aligned}\delta f(x,\theta(t_0)) &amp;= \sum_p \partial _{\theta_p} f(x,\theta(t_0)) \times \delta\theta_p(t_0)\\&amp;=-\eta \times\sum_p \partial _{\theta_p} f(x,\theta(t_0)) \times \left[\partial_f\mathbb{C}| _{f_0}*\partial _{\theta_p}f_0\right],\end{aligned}$$</p>
+
+<p>Notice that the term $\partial_f\mathbb{C}| _{f_0}*\partial _{\theta_p}f_0$ is a real value that doesn&rsquo;t depend on $x$. And the derivative of $\mathbb{C}$ with respect to $t$ is given by</p>
+
+<p>$$\begin{aligned}\delta\mathbb{C}| _{f_0} &amp;= \partial_f \mathbb{C}| _{f_0} * \delta f(x, \theta(t_0))\\&amp;=-\eta \times\sum_p \left[ \partial_f \mathbb{C}| _{f_0}* \partial _{\theta_p} f_0 \right] \times \left[\partial_f\mathbb{C}| _{f_0}*\partial _{\theta_p} f_0 \right]\\&amp;=-\eta \times\sum_p \left[ \partial_f \mathbb{C}| _{f_0} * \partial _{\theta_p} f_0 \right] ^2\end{aligned}$$</p>
+
+<p>Now it is natural to group the terms</p>
+
+<p>$$\sum_p \partial _{\theta_p} f(x, \theta) \otimes \partial _{\theta_p} f(x&rsquo;, \theta),$$</p>
+
+<p>which just corresponds to the Neural Tangent Kernel $\Theta(x, x&rsquo;, \theta)$. We use tensor product $\otimes$ since in the formulae the two $\partial _{\theta_p} f$ act on different spaces.</p>
+
+<p>We see that <strong>locally</strong> the cost $\mathbb{C}$ is always non-increasing as long as we keep using the <strong>same set</strong> of training data for updating. This non-increasing guarantee is not interesting, since it is just another way to say <strong>locally</strong> (S)GD updates the model along a direction which decreases the cost $\mathbb{C}$, which follows directly from the definition of gradient.</p>
+
+<p>Above analysis only applies to the cases in which $\theta$  undergoes a very small perturbation，in this sense, they only describes a <strong>first order dynamics</strong> of the underlying model.</p>
+
+<h3 id="remarks">Remarks</h3>
+
+<ul>
+<li>Above analysis is discouraging, since it indicates the Neural Tangent Kernel approach can only describe the first order dynamics. In order to be practical, higher order (at least the second order) terms should be included, say one may consider the Neural Hessian Kernel;
+
+<ul>
+<li>of course, the Neural Tangent Kernel (NTK) approach may be of interest in the limiting cases, e.g. for the infinite-width fully-connected network case, where the NTK tends to be a constant kernel.</li>
+</ul></li>
+<li>There is another restrict in the deduction that makes the results quite impractical: they require the dataset used at each step of update to be fixed. However, in practice, the situation is totally different. Just need to mention the use of mini-batches, which will introduce randomness into the learning process, making it more like a Markov Chain. One actually need stochastic integration to figure out the trajectory of the model in the functional space during training.</li>
+</ul>
+
+            </div>
+            <hr>
+            
+        </div>
+        </br>
+         
+         <div class="tile is-child box">
+            <div class="content has-text-grey-light" align="center">
+                “End? No, the journey doesn't end here.”
             </div>
         </div>
     </div>
@@ -172,6 +282,23 @@ $$\begin{aligned} \int P(x)\log\frac{1}{P(x)}\,\text{d}x &amp;= - \int P(x)\left
     </div>
 </div>
     <br>
+        
+  
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h1 class="title is-5"><i class="fa fa-file" aria-hidden="true"></i> Related posts</h1>
+      
+      
+            <h1><a href="https://xyli1905.github.io/2019/07/variational-form-for-hx/">Variational Form for H(x)</a></h1>
+            <time class="has-text-grey-light is-size-7">29 July 2019</time>
+      
+    </div>
+</div>
+
+<br>
         <div class="card">
     <div class="card-content">
         <h1 class="title is-5"><i class="fa fa-sitemap" aria-hidden="true"></i> Categories</h1>

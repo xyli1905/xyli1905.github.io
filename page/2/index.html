@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-us">
 <head>
+	<meta name="generator" content="Hugo 0.56.0" />
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Quanta  | science, reflection, projects</title>
@@ -12,7 +13,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css" />
     <link rel="stylesheet" href="https://xyli1905.github.io/css/blog.css" />
     
-    <link rel="alternate" type="application/rss&#43;xml" href="https://xyli1905.github.io/categories/deepinfoflow/index.xml">
+    <link rel="alternate" type="application/rss&#43;xml" href="https://xyli1905.github.io/index.xml">
     
     <style>
         .search {
@@ -84,7 +85,7 @@
                 <br>
                 <h1 class="title is-size-1">
                     
-                        DeepInfoFlow </br>
+                        Quanta </br>
                         <h6>SCIENCE, REFLECTION, PROJECTS</h6>
                     
                 </h1>
@@ -104,52 +105,47 @@
     <div class="column is-9">
         <div class="tile is-child box">
             <div class="content">
-
-                <article class="media">
-                    <div class="media-content">
-                        <div class="content">
-                            <p class="title is-4"><a href="https://xyli1905.github.io/2019/07/variational-form-for-hx/">Variational Form for H(x)</a></p>
-                            <p class="subtitle is-size-6 has-text-grey-light">
-                                July 29, 2019 &middot;
-                                
-                                    <i class="fa fa-user" aria-hidden="true"></i> Xingyu Li &middot;
-                                
-                                
-                                    <i class="fa fa-sitemap" aria-hidden="true"></i>
+                <p class="subtitle is-size-22 has-text-grey-light">Welcome and happy exploring</p>
+                <hr>
+                
+                    <article class="media">
+                        <div class="media-content">
+                            <div class="content">
+                                <p class="title is-4"><a href="https://xyli1905.github.io/2014/03/migrate-from-jekyll/">Migrate to Hugo from Jekyll</a></p>
+                                <p class="subtitle is-size-6 has-text-grey-light">
+                                    March 10, 2014 &middot;
                                     
-                                        <span class="category"><a href="https://xyli1905.github.io/categories/deepinfoflow">DeepInfoFlow</a></span>
+                                        <i class="fa fa-user" aria-hidden="true"></i> Somebody &middot;
                                     
-                                    &middot;
-                                
-                                
-                                    <i class="fa fa-tag" aria-hidden="true"></i>
                                     
-                                        <span class="tag"><a href="https://xyli1905.github.io/tags/information-theory">information theory</a></span>
+                                        <i class="fa fa-sitemap" aria-hidden="true"></i>
+                                        
+                                            <span class="category"><a href="https://xyli1905.github.io/categories/hugo">hugo</a></span>
+                                        
+                                        &middot;
                                     
-                                        <span class="tag"><a href="https://xyli1905.github.io/tags/math">math</a></span>
                                     
-                                        <span class="tag"><a href="https://xyli1905.github.io/tags/variational-form">variational form</a></span>
+                                        <i class="fa fa-tag" aria-hidden="true"></i>
+                                        
+                                            <span class="tag"><a href="https://xyli1905.github.io/tags/tutorial">tutorial</a></span>
+                                        
+                                        &middot;
                                     
-                                    &middot;
-                                
-                                <i class="far fa-clock"></i>&nbsp;2 min read
-                            </p>
-                            <p>For continuum random variable $X$, the differential entropy id defined as
-$$\int P(x)\log\dfrac{1}{P(x)}\,\text{d}x,\tag{1}$$
-where $P(x)$ is the distribution for $X$.
-function $-\log v$ is strictly convex, let $\phi$ be its conjugate dual function, then $-\log v = \underset{u\in\mathbb{R}}{\text{sup}}\left[uv - \phi(u)\right]$, $\phi(u) = -1 - \log(-u)$ for $u&lt;0$ and $+\infty$ otherwise.
-using above, we have
-$$\begin{aligned} \int P(x)\log\frac{1}{P(x)}\,\text{d}x &amp;= - \int P(x)\left(- \log\frac{1}{P(x)}\right)\,\text{d}x \\&amp;= -\int P(x) \underset{f}{\text{sup}}\left[ f(x)\frac{1}{P(x)} - \phi(f) \right]\,\text{d}x \\&amp;= -\underset{f}{\text{sup}}\left[ \int f(x)\,\text{d}x - \int \phi(f)P(x)\,\text{d}x\right] \\&amp;= -\underset{f}{\text{sup}}\left[ \int f(x)\,\text{d}x - \mathbb{E}_{P}[\phi(f)]\right]\end{aligned}$$</p>
-                            <a href="https://xyli1905.github.io/2019/07/variational-form-for-hx/" class="button big">Read More</a>
+                                    <i class="far fa-clock"></i>&nbsp;4 min read
+                                </p>
+                                <p>Move static content to static Jekyll has a rule that any directory not starting with _ will be copied as-is to the _site output. Hugo keeps all static content under static. You should therefore move it all there. With Jekyll, something that looked like
+▾ &lt;root&gt;/ ▾ images/ logo.png  should become
+▾ &lt;root&gt;/ ▾ static/ ▾ images/ logo.png  Additionally, you&rsquo;ll want any files that should reside at the root (such as CNAME) to be moved to static.</p>
+                                <a href="https://xyli1905.github.io/2014/03/migrate-from-jekyll/" class="button big">Read More</a>
+                            </div>
                         </div>
-                    </div>
-                </article>
-                <br>
-
+                    </article>
+                
             </div>
         </div>
     </div>
     <div class="column is-3">
+        
         <div class="card">
     <div class="card-content">
         <h1 class="title is-5"><i class="fa fa-file" aria-hidden="true"></i> Recent posts</h1>
@@ -237,6 +233,26 @@ $$\begin{aligned} \int P(x)\log\frac{1}{P(x)}\,\text{d}x &amp;= - \int P(x)\left
 </div>
     </div>
 </div>
+<div class="columns">
+    <div class="column is-9">
+        <nav class="pagination is-centered is-rounded" role="navigation" aria-label="pagination">
+            <a class="pagination-previous" href="https://xyli1905.github.io/">Previous</a>
+            
+            <ul class="pagination-list">
+                
+                <li class="pagination__item">
+                    <a class="pagination-link" aria-label="Goto page 1" href="https://xyli1905.github.io/">1</a>
+                </li>
+                
+                <li class="pagination__item">
+                    <a class="pagination-link is-current" aria-label="Goto page 2" href="https://xyli1905.github.io/page/2/">2</a>
+                </li>
+                
+            </ul>
+        </nav>
+    </div>
+</div>
+
 
 
     </div>
