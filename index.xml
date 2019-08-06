@@ -5,7 +5,7 @@
     <description>Recent content on Quanta</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 01 Aug 2019 12:48:05 -0700</lastBuildDate>
+    <lastBuildDate>Tue, 06 Aug 2019 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://xyli1905.github.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -29,6 +29,15 @@ We&amp;rsquo;ll start with creating a new site with a very basic template.</desc
       <description>Move static content to static Jekyll has a rule that any directory not starting with _ will be copied as-is to the _site output. Hugo keeps all static content under static. You should therefore move it all there. With Jekyll, something that looked like
 ▾ &amp;lt;root&amp;gt;/ ▾ images/ logo.png  should become
 ▾ &amp;lt;root&amp;gt;/ ▾ static/ ▾ images/ logo.png  Additionally, you&amp;rsquo;ll want any files that should reside at the root (such as CNAME) to be moved to static.</description>
+    </item>
+    
+    <item>
+      <title>about me</title>
+      <link>https://xyli1905.github.io/about/</link>
+      <pubDate>Tue, 06 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://xyli1905.github.io/about/</guid>
+      <description>Figure Caption   --  Too lazy, Just a photo; Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Etiam lobortis facilisis sem. Nullam nec mi et neque pharetra sollicitudin. Praesent imperdiet mi necante. Donec ullamcorper, felis non sodales commodo, lectus velit ultrices augue, a dignissim nibh lectus placerat pede. Praesent blandit blandit mauris. Praesent lectus tellus, aliquet aliquam, luctus a, egestas a, turpis. Mauris lacinia lorem sit amet ipsum.</description>
     </item>
     
     <item>
@@ -62,17 +71,6 @@ where $P(x)$ is the distribution for $X$.
 function $-\log v$ is strictly convex, let $\phi$ be its conjugate dual function, then $-\log v = \underset{u\in\mathbb{R}}{\text{sup}}\left[uv - \phi(u)\right]$, $\phi(u) = -1 - \log(-u)$ for $u&amp;lt;0$ and $+\infty$ otherwise.
 using above, we have
 $$\begin{aligned} \int P(x)\log\frac{1}{P(x)}\,\text{d}x &amp;amp;= - \int P(x)\left(- \log\frac{1}{P(x)}\right)\,\text{d}x \\&amp;amp;= -\int P(x) \underset{f}{\text{sup}}\left[ f(x)\frac{1}{P(x)} - \phi(f) \right]\,\text{d}x \\&amp;amp;= -\underset{f}{\text{sup}}\left[ \int f(x)\,\text{d}x - \int \phi(f)P(x)\,\text{d}x\right] \\&amp;amp;= -\underset{f}{\text{sup}}\left[ \int f(x)\,\text{d}x - \mathbb{E}_{P}[\phi(f)]\right]\end{aligned}$$</description>
-    </item>
-    
-    <item>
-      <title>About Hugo</title>
-      <link>https://xyli1905.github.io/about/</link>
-      <pubDate>Wed, 09 Apr 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://xyli1905.github.io/about/</guid>
-      <description>Hugo is the world’s fastest framework for building websites. It is written in Go.
-It makes use of a variety of open source projects including:
- https://github.com/russross/blackfriday https://github.com/alecthomas/chroma https://github.com/muesli/smartcrop https://github.com/spf13/cobra https://github.com/spf13/viper  Learn more and contribute on GitHub.</description>
     </item>
     
     <item>
