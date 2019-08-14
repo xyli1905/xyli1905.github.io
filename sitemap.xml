@@ -13,8 +13,72 @@
   </url>
   
   <url>
+    <loc>https://xyli1905.github.io/archives/2019-08/</loc>
+    <lastmod>2019-08-13T23:26:24-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://xyli1905.github.io/archives/</loc>
+    <lastmod>2019-08-13T23:26:24-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://xyli1905.github.io/categories/</loc>
+    <lastmod>2019-08-13T23:26:24-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://xyli1905.github.io/categories/noise-and-generalization/</loc>
+    <lastmod>2019-08-13T23:26:24-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://xyli1905.github.io/post/</loc>
+    <lastmod>2019-08-13T23:26:24-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://xyli1905.github.io/</loc>
-    <lastmod>2019-08-06T00:00:00+00:00</lastmod>
+    <lastmod>2019-08-13T23:26:24-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://xyli1905.github.io/2019/08/response-of-loss-function-to-label-noise/</loc>
+    <lastmod>2019-08-13T23:26:24-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://xyli1905.github.io/tags/</loc>
+    <lastmod>2019-08-13T23:26:24-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://xyli1905.github.io/tags/information-theory/</loc>
+    <lastmod>2019-08-13T23:26:24-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://xyli1905.github.io/tags/math/</loc>
+    <lastmod>2019-08-13T23:26:24-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://xyli1905.github.io/2019/08/bayes-classifier-and-mi-classifier-with-noisy-labels/</loc>
+    <lastmod>2019-08-08T18:50:27-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://xyli1905.github.io/tags/review/</loc>
+    <lastmod>2019-08-08T18:50:27-07:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -24,54 +88,12 @@
   </url>
   
   <url>
-    <loc>https://xyli1905.github.io/archives/2019-08/</loc>
-    <lastmod>2019-08-01T12:48:05-07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://xyli1905.github.io/archives/</loc>
-    <lastmod>2019-08-01T12:48:05-07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://xyli1905.github.io/categories/</loc>
-    <lastmod>2019-08-01T12:48:05-07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://xyli1905.github.io/2019/08/neural-tangent-kernel-and-nn-dynamics/</loc>
     <lastmod>2019-08-01T12:48:05-07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://xyli1905.github.io/categories/noise-and-generalization/</loc>
-    <lastmod>2019-08-01T12:48:05-07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://xyli1905.github.io/post/</loc>
-    <lastmod>2019-08-01T12:48:05-07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://xyli1905.github.io/tags/</loc>
-    <lastmod>2019-08-01T12:48:05-07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://xyli1905.github.io/tags/dynamics/</loc>
-    <lastmod>2019-08-01T12:48:05-07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://xyli1905.github.io/tags/math/</loc>
     <lastmod>2019-08-01T12:48:05-07:00</lastmod>
     <priority>0</priority>
   </url>
@@ -102,12 +124,6 @@
   <url>
     <loc>https://xyli1905.github.io/2019/07/variational-form-for-hx/</loc>
     <lastmod>2019-07-29T10:24:47-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://xyli1905.github.io/tags/information-theory/</loc>
-    <lastmod>2019-07-29T10:24:47-07:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>

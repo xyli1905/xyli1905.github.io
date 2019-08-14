@@ -1,25 +1,14 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Noise and Generalization on Quanta</title>
-    <link>https://xyli1905.github.io/categories/noise-and-generalization/</link>
-    <description>Recent content in Noise and Generalization on Quanta</description>
+    <title>review on Quanta</title>
+    <link>https://xyli1905.github.io/tags/review/</link>
+    <description>Recent content in review on Quanta</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 13 Aug 2019 23:26:24 -0700</lastBuildDate>
+    <lastBuildDate>Thu, 08 Aug 2019 18:50:27 -0700</lastBuildDate>
     
-        <atom:link href="https://xyli1905.github.io/categories/noise-and-generalization/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://xyli1905.github.io/tags/review/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Response of Loss Functions to Label Noise (draft)</title>
-      <link>https://xyli1905.github.io/2019/08/response-of-loss-function-to-label-noise/</link>
-      <pubDate>Tue, 13 Aug 2019 23:26:24 -0700</pubDate>
-      
-      <guid>https://xyli1905.github.io/2019/08/response-of-loss-function-to-label-noise/</guid>
-      <description>Distortion on dataset distribution by nosie labels Let $t$ and $t^*$ be the correct target label and the noisy label, respectively. Presently, we focus on binary classification and assume the label noise only depends on the correct label, i.e. the error rates are:
-$$e _- = P(t^* = +1 | t= -1) \quad \text{and} \quad e _+ = P(t^*=-1|t=+1).$$
-The noisy dataset defines the joint distribution $P(x, t^*)$, which relates to the clean distribution $P(x, t)$ through</description>
-    </item>
     
     <item>
       <title>Bayes Classifier and MI Classifier With Noisy Labels</title>

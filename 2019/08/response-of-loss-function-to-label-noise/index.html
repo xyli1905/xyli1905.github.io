@@ -12,7 +12,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css" />
     <link rel="stylesheet" href="https://xyli1905.github.io/css/blog.css" />
 
-    <link rel="alternate" type="application/rss&#43;xml" href="https://xyli1905.github.io/categories/noise-and-generalization/index.xml">
     
     <style>
         .search {
@@ -84,10 +83,11 @@
                 <br>
                 <h1 class="title is-size-1">
                     
-                        Noise and Generalization </br>
-                        <h6>SCIENCE, REFLECTION, PROJECTS</h6>
+                        Response of Loss Functions to Label Noise (draft)
                     
                 </h1>
+                
+                    
                 
             </div>
         </div>
@@ -98,16 +98,147 @@
     <div class="section">
     
 
-
+<header>
+    <div class="columns">
+        <div class="column is-9">
+            <div class="title">
+                <h1>Response of Loss Functions to Label Noise (draft)</h1>
+            </div>
+            <div class="meta">
+                August 13, 2019 &middot;
+                
+                    <i class="fa fa-user" aria-hidden="true"></i> Xingyu Li &middot;
+                
+                
+                    <i class="fa fa-sitemap" aria-hidden="true"></i>
+                    
+                        <span class="category"><a href="https://xyli1905.github.io/categories/noise-and-generalization">Noise and Generalization</a></span>
+                    
+                    &middot;
+                
+                
+                    <i class="fa fa-tag" aria-hidden="true"></i>
+                    
+                        <span class="tag"><a href="https://xyli1905.github.io/tags/math">math</a></span>
+                    
+                        <span class="tag"><a href="https://xyli1905.github.io/tags/information-theory">information theory</a></span>
+                    
+                    
+                
+                
+            </div>
+        </div>
+    </div>
+</header>
 
 <div class="columns">
     <div class="column is-9">
         <div class="tile is-child box">
             <div class="content">
+                
+
+<h2 id="distortion-on-dataset-distribution-by-nosie-labels">Distortion on dataset distribution by nosie labels</h2>
+
+<p>Let $t$ and $t^*$ be the correct target label and the noisy label, respectively. Presently, we focus on binary classification and assume the label noise only depends on the correct label, i.e. the error rates are:</p>
+
+<p>$$e _- = P(t^* = +1 | t= -1) \quad \text{and} \quad e _+ = P(t^*=-1|t=+1).$$</p>
+
+<p>The noisy dataset defines the joint distribution $P(x, t^*)$, which relates to the clean distribution $P(x, t)$ through</p>
+
+<p>$$\begin{aligned}P(x, t^*=+1) &amp;= (1 - e _+) * P(x, t=+1) + e _- * P(x, t= -1),\\ P(x, t^*=-1) &amp;= e _+ *P(x, t=+1) + (1 - e _-) * P(x, t= -1).\end{aligned}\tag{1}$$</p>
+
+<p>For now, we will assume the model has been derived/trained somehow elsewhere. It will define a decision boundary $\partial _d$, which splits the feature space into two parts: one for $+1$ prediction, the other for $-1$. Let&rsquo;s denote these areas as $\Omega _+$ and $\Omega _-$, respectively. In order to distinguish from the clean and noisy label, we use $y$ to denote the predicted label by our model.</p>
+
+<h2 id="mutual-information-loss">Mutual Information Loss</h2>
+
+<p>Mutual information loss is defined as follow:</p>
+
+<p>$$\mathcal{I}(Y; T) = \sum _{y,t} P(y, t)* \log \frac{P(y, t)}{P(y)P(t)},$$</p>
+
+<p>where $P(y,t)$ can be calculated by</p>
+
+<p>$$P(y=\pm 1, t) = \sum _{\Omega _{\pm}} P(x, t).$$</p>
+
+<p>Now, take into account the noise on labels, then, for example</p>
+
+<p>$$\begin{aligned}P(y= +1, t^* = +1) &amp;= \sum _{\Omega _+} P(x, t^*=+1)\\&amp;= \sum _{\Omega _+} [(1 - e _+) * P(x, t=+1) + e _- * P(x, t= -1)]\\ &amp;= (1 - e _+ - e _-)*\sum _{\Omega _+} P(x, t = +1) + e _- * P(y=+1)\\ &amp;=  \mathfrak{E}* P(y=+1, t = +1) + e _- * P(y=+1),\end{aligned}$$</p>
+
+<p>at last step we set $(1 - e _+ - e _-) = \mathfrak{E}$ for simplicity. Generally, one has</p>
+
+<p>$$P(y, t^* = \pm 1) =  \mathfrak{E} * P(y, t = \pm 1) + e _{\mp}* P(y),$$</p>
+
+<p>or, with different symbols,</p>
+
+<p>$$P(y, t^*) =  \mathfrak{E} * P(y, t) + e _{-t} * P(y),$$</p>
+
+<p>where, assumed implicitly, $t^*$ and $t$ take the same value. Further, it follows</p>
+
+<p>$$P(t^*) =  \mathfrak{E} * P(t) + e _{-t} .$$</p>
+
+<p>Based on above, if the error rates are small, i.e. $e _\pm \sim 0 ^+$, one may approximate</p>
+
+<p>$$\frac{P( y, t^* )}{ P(y) P(t^*)} \approx \frac{P(y, t)}{ P(y) P(t)},$$</p>
+
+<p>As a result, the mutual information loss goes</p>
+
+<p>$$\begin{aligned}\mathcal{I}(Y;T^*) &amp;\approx \sum _{y,t} [ \mathfrak{E} * P(y, t) + e _{-t}* P(y)] * \log \frac{P(y, t)}{P(y)P(t)}\\ &amp;= \mathcal{I}(Y; T) - (e _+ + e _-) * \mathcal{I}(Y; T) +  (e _+ + e _-)* H(Y) + \mathfrak{D}\\ &amp;= \mathcal{I}(Y; T) + (e _+ + e _-) * H(Y|T) + \mathfrak{D},\end{aligned}$$</p>
+
+<p>where</p>
+
+<p>$$\begin{aligned}\mathfrak{D} &amp;= \sum _{y,t} e  _{-t} * P(y) * \log P(y|t)\\ &amp;= \mathbb{E} _y \left[ \sum_t e  _{-t} * \log P(y|t) \right].\end{aligned}$$</p>
+
+<h2 id="cross-entropy-loss-negative-log-likelihood-loss">Cross Entropy Loss / Negative Log-Likelihood Loss</h2>
+
+<p>Cross entropy loss is usually defined as</p>
+
+<p>$$L(Y, T) = \frac{1}{N} \sum_i \mathfrak{t}^i \cdot \log \mathfrak{y}^i.$$</p>
+
+<p>Here, one adopts the one-hot encoding for training labels, $\mathfrak{t}^i$, and the model prediction, $\mathfrak{y}_i$, are probability vector for the input feature to be classified in each class, i.e. $\mathfrak{y} ^i _l = Q(c_l|x)$, where $c_l$ refers to the $l$&lsquo;th class and $Q$ emphasizes this probability is produced by our model. $N$ stands for the size of dataset.</p>
+
+<p>Let&rsquo;s first consider the limit expression of this loss under $N\rightarrow \infty$. We claim</p>
+
+<p>$$L(Y,T) \underset{N\rightarrow\infty}{\longrightarrow} \sum _{x, t} P(x)*P(t|x)\log Q(t|x).\tag{2}$$</p>
+
+<p>Note that we have changed symbol for the target label, i.e. $t \in \{ -1,+1 \}$, which has the same meaning as in the previous section. $P$ refers to the empirical/true distribution of the dataset.</p>
+
+<p>We also recognize that equation (2) is just the cross entropy between $P$ and $Q$ conditioned on $x$: $H(P,Q|X)$. Now, we can employ equation (1) to write down gthe response of cross entropy loss to the label noise. Note that $Q$ is solely determined by the model, one has</p>
+
+<p>$$\begin{aligned}H(P^* ,Q | X) &amp;= \sum _{x, t^*} P(x) * P(t^* | x)\log Q(t^* | x)\\&amp;= \sum _{x, t} [\mathfrak{E}*P(x,t)+ e _{-t} * P(x)]*\log Q(t|x) \\ &amp;= \mathfrak{E} * H(P,Q | X) + \mathbb{E} _x \left[ \sum_t e _{-t} * \log Q(t|x)\right].\end{aligned}$$</p>
+
+<p>In above, we use $H(P^*,Q|X)$ to indicate the conditional cross entropy on noisy data. One may rearrange terms to write the r.h.s. of above equation as</p>
+
+<p>$$H(P,Q|X) - (e _+ + e _-) * H(P,Q) + \mathbb{E}_x \left[ \sum_t e _{-t} * \log Q(t,x) \right],$$</p>
+
+<p>where</p>
+
+<p>$$H(P,Q) = \sum _{x,t} P(x,t)\log Q(x,t)$$</p>
+
+<p>and $Q(x,t) = Q(t|x)*P(x)$.</p>
 
             </div>
+            <hr>
         </div>
+        </br>
+         
+         <div class="tile is-child box">
+            <div class="content has-text-grey-light" align="center">
+                
+                    there is still a long way to go
+                
+            </div>
+        </div>
+        
+        
+            <script src="https://utteranc.es/client.js"
+                    repo="xyli1905/xyli1905.github.io"
+                    issue-term="pathname"
+                    theme="github-light"
+                    crossorigin="anonymous"
+                    async>
+            </script>
+        
     </div>
+    <div id="comments-container"></div>
     <div class="column is-3">
         <div class="card">
     <div class="card-content">
@@ -131,6 +262,29 @@
     </div>
 </div>
     <br>
+        
+  
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h1 class="title is-5"><i class="fa fa-file" aria-hidden="true"></i> Related posts</h1>
+      
+      
+            <h1><a href="https://xyli1905.github.io/2019/08/bayes-classifier-and-mi-classifier-with-noisy-labels/">Bayes Classifier and MI Classifier With Noisy Labels</a></h1>
+            <time class="has-text-grey-light is-size-7">8 August 2019</time>
+      
+            <h1><a href="https://xyli1905.github.io/2019/08/neural-tangent-kernel-and-nn-dynamics/">Neural Tangent Kernel and NN Dynamics (under construction)</a></h1>
+            <time class="has-text-grey-light is-size-7">1 August 2019</time>
+      
+            <h1><a href="https://xyli1905.github.io/2019/07/variational-form-for-hx/">Variational Form for H(x)</a></h1>
+            <time class="has-text-grey-light is-size-7">29 July 2019</time>
+      
+    </div>
+</div>
+
+<br>
         <div class="card">
     <div class="card-content">
         <h1 class="title is-5"><i class="fa fa-sitemap" aria-hidden="true"></i> Categories</h1>

@@ -5,10 +5,33 @@
     <description>Recent content in 2019-08 on Quanta</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 01 Aug 2019 12:48:05 -0700</lastBuildDate>
+    <lastBuildDate>Tue, 13 Aug 2019 23:26:24 -0700</lastBuildDate>
     
         <atom:link href="https://xyli1905.github.io/archives/2019-08/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Response of Loss Functions to Label Noise (draft)</title>
+      <link>https://xyli1905.github.io/2019/08/response-of-loss-function-to-label-noise/</link>
+      <pubDate>Tue, 13 Aug 2019 23:26:24 -0700</pubDate>
+      
+      <guid>https://xyli1905.github.io/2019/08/response-of-loss-function-to-label-noise/</guid>
+      <description>Distortion on dataset distribution by nosie labels Let $t$ and $t^*$ be the correct target label and the noisy label, respectively. Presently, we focus on binary classification and assume the label noise only depends on the correct label, i.e. the error rates are:
+$$e _- = P(t^* = +1 | t= -1) \quad \text{and} \quad e _+ = P(t^*=-1|t=+1).$$
+The noisy dataset defines the joint distribution $P(x, t^*)$, which relates to the clean distribution $P(x, t)$ through</description>
+    </item>
+    
+    <item>
+      <title>Bayes Classifier and MI Classifier With Noisy Labels</title>
+      <link>https://xyli1905.github.io/2019/08/bayes-classifier-and-mi-classifier-with-noisy-labels/</link>
+      <pubDate>Thu, 08 Aug 2019 18:50:27 -0700</pubDate>
+      
+      <guid>https://xyli1905.github.io/2019/08/bayes-classifier-and-mi-classifier-with-noisy-labels/</guid>
+      <description>Definition and Relation This section is a partial review of Bao-Gang Hu&amp;rsquo;s paper.
+Bayes Classifier without rejection and its Decision Rule Bayes Classifier makes decisions based on a (often) subjectively designed risk function $\mathfrak{R}$:
+$$\mathfrak{R}(y_j | x) = \sum_i \lambda _{ij} P(x | t_i)P(t_i),$$
+where $x \in \R^d$ is the input feature; $y_j$ and $t_i$ stand for the predicted class and the true class, respectively; $\lambda _{ij}$ is the cost when a true label $i$ is classified as $j$.</description>
+    </item>
     
     <item>
       <title>Neural Tangent Kernel and NN Dynamics (under construction)</title>

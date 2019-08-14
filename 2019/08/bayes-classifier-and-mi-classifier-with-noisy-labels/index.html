@@ -12,7 +12,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css" />
     <link rel="stylesheet" href="https://xyli1905.github.io/css/blog.css" />
 
-    <link rel="alternate" type="application/rss&#43;xml" href="https://xyli1905.github.io/categories/noise-and-generalization/index.xml">
     
     <style>
         .search {
@@ -84,10 +83,11 @@
                 <br>
                 <h1 class="title is-size-1">
                     
-                        Noise and Generalization </br>
-                        <h6>SCIENCE, REFLECTION, PROJECTS</h6>
+                        Bayes Classifier and MI Classifier With Noisy Labels
                     
                 </h1>
+                
+                    
                 
             </div>
         </div>
@@ -98,16 +98,156 @@
     <div class="section">
     
 
-
+<header>
+    <div class="columns">
+        <div class="column is-9">
+            <div class="title">
+                <h1>Bayes Classifier and MI Classifier With Noisy Labels</h1>
+            </div>
+            <div class="meta">
+                August 8, 2019 &middot;
+                
+                    <i class="fa fa-user" aria-hidden="true"></i> Xingyu Li &middot;
+                
+                
+                    <i class="fa fa-sitemap" aria-hidden="true"></i>
+                    
+                        <span class="category"><a href="https://xyli1905.github.io/categories/noise-and-generalization">Noise and Generalization</a></span>
+                    
+                    &middot;
+                
+                
+                    <i class="fa fa-tag" aria-hidden="true"></i>
+                    
+                        <span class="tag"><a href="https://xyli1905.github.io/tags/review">review</a></span>
+                    
+                        <span class="tag"><a href="https://xyli1905.github.io/tags/math">math</a></span>
+                    
+                        <span class="tag"><a href="https://xyli1905.github.io/tags/information-theory">information theory</a></span>
+                    
+                    
+                
+                
+            </div>
+        </div>
+    </div>
+</header>
 
 <div class="columns">
     <div class="column is-9">
         <div class="tile is-child box">
             <div class="content">
+                
+
+<h2 id="definition-and-relation">Definition and Relation</h2>
+
+<p>This section is a <strong>partial</strong> review of Bao-Gang Hu&rsquo;s <a href="https://arxiv.org/abs/1105.0051v2">paper</a>.</p>
+
+<h3 id="bayes-classifier-without-rejection-and-its-decision-rule">Bayes Classifier without rejection and its Decision Rule</h3>
+
+<p>Bayes Classifier makes decisions based on a (often) subjectively designed risk function $\mathfrak{R}$:</p>
+
+<p>$$\mathfrak{R}(y_j | x) = \sum_i \lambda _{ij} P(x | t_i)P(t_i),$$</p>
+
+<p>where $x \in \R^d$ is the input feature; $y_j$ and $t_i$ stand for the predicted class and the true class, respectively; $\lambda _{ij}$ is the cost when a true label $i$ is classified as $j$.
+Note that generally one doesn&rsquo;t have a one-to-one mapping between $x$ and $t_i$. Instead, one has a joint distribution $P(x, t_i)$. Then the Bayes Classifier will choose $y^*$ such that</p>
+
+<p>$$y^* = \underset{y}{\arg\max}\, \mathfrak{R}(y|x)$$</p>
+
+<p>as its prediction.</p>
+
+<p>Let&rsquo;s confine to the case of binary classification, where $i,j \in {1, 2}$. It is straightforward to write down the corresponding decision rule for the Bayes Classifier. Let</p>
+
+<p>$$ \Lambda = \frac{P(t_1|x)}{P(t_2|x)} = \frac{P(x|t_1)P(t_1)}{P(x|t_2)P(t_2)} \quad\text{and}\quad \delta = \frac{\lambda _{21} - \lambda _{22}}{\lambda _{12} - \lambda _{11}}.$$</p>
+
+<p>One has</p>
+
+<p>$$y^* = \begin{cases}y_1, &amp; \text{if}\quad \Lambda &gt; \delta\\ y_2, &amp; \text{if}\quad \Lambda \le \delta\end{cases}$$</p>
+
+<p>The threshold $\delta$ implicitly defines a decision boundary in $\R^d$.</p>
+
+<p>In above, one computes the threshold $\delta$ using $\lambda _{ij}$. However, in practice, one may have a good intuition on the threshold for a certain problem rather than on the costs. In fact, it is ok to define the threshold $\delta$ first, and in turn, it will provide some constrains on the costs $\lambda _{ij}$. Note in that case, the risk $\mathfrak{R}$ would be not well-defined.</p>
+
+<h3 id="mutual-information-classifier-without-rejection-and-its-relation-to-bayse-classifier">Mutual Information Classifier without rejection and its relation to Bayse Classifier</h3>
+
+<p>Mutual Information (MI) Classifier is defined as</p>
+
+<p>$$y^ \dagger = \underset{y}{\arg\max}\,\frac{I(T, Y)}{H(T)},$$</p>
+
+<p>where</p>
+
+<p>$$I(T,Y) = \sum _{ij} {P(t_i, y_j)\log \frac{P(t_i, y_j)}{P(t_i)P(y_j)}}$$</p>
+
+<p>and</p>
+
+<p>$$H(T) = -\sum_i P(t_i)\log P(t_i).$$</p>
+
+<p>$H(T)$ serves as a normalization factor. It remains unchanged once the problem itself is defined.</p>
+
+<p>Solving the MI classifier is very difficult, since it involves the <strong>search</strong> of the dicision boundary in $\R^d$. Recall that for the Bayes Classifier, the dicision boundary is <strong>determined</strong> after finding the threshold. To solve the MI classifer, one needs to compute $P(t_i, y_j)$</p>
+
+<p>$$P(t_i, y_j) = \int _{\Omega_j} P(x|t_i)P(t_i)\,\text{d} x,$$</p>
+
+<p>where $\Omega_j$ is the region where MI classifier predicts $y_j$ for the given featrure $x$. The Marginal distributions $P(t_i)$ and $P(y_j)$ can be then computed easily.</p>
+
+<p>Of course, MI Classifier and Bayes Classifer are different things, as summarized by Bao-Gang Hu:</p>
+
+<blockquote>
+<p>Bayesian and mutual-information classifiers are different essentially from their applied learning targets.</p>
+</blockquote>
+
+<p>Bao-Gang Hu also points out that under specific situations the two classifiers can be equivalent in the sense they give the same decision boundary. As an example, for binary classification case:</p>
+
+<p>$$\begin{aligned}P(x|t_1) \sim N(-1, 2), P(t_1)=0.5, \\ P(x|t_2) \sim N(1, 1), P(t_2)=0.5,\end{aligned}$$</p>
+
+<p>where $x\in \R$ and $N(\mu, \sigma)$ is the Gaussian distribution. Bao-Gang Hu shows if one chooses</p>
+
+<p>$$\lambda _{11} = 0, \lambda _{12} = 1, \lambda _{21} = 2.002, \lambda _{22} = 0,$$</p>
+
+<p>then the decision boundaries of the two classifiers are identical. However, for general cases, there is no such relation.</p>
+
+<h3 id="remarks">remarks</h3>
+
+<p>For Bayes Classifier on binary classification case,</p>
+
+<p>$$Accuracy = \int _{\Omega_1} P(x|t_1)P(t_1)\,\text{d}x + \int _{\Omega_2} P(x|t_2)P(t_2)\,\text{d}x,$$</p>
+
+<p>based on the decision rule within $\Omega_1$, $P(x|t_1)P(t_1) &gt; \delta * P(x|t_2)P(t_2)$, thus</p>
+
+<p>$$Accuracy &gt; P(t_2) + (\delta - 1)*\int _{\Omega_1} P(x|t_2)P(t_2)\,\text{d}x.$$</p>
+
+<p>Likewise,</p>
+
+<p>$$Accuracy \ge P(t_1) + (\frac{1}{\delta} - 1)*\int _{\Omega_2} P(x|t_1)P(t_1)\,\text{d}x.$$</p>
+
+<p>However, high overall accuracy doesn&rsquo;t guarantee high accuracy on each class.</p>
+
+<h2 id="when-noisy-labels-come-into-play">when noisy labels come into play</h2>
 
             </div>
+            <hr>
         </div>
+        </br>
+         
+         <div class="tile is-child box">
+            <div class="content has-text-grey-light" align="center">
+                
+                    “End? No, the journey doesn't end here.”
+                
+            </div>
+        </div>
+        
+        
+            <script src="https://utteranc.es/client.js"
+                    repo="xyli1905/xyli1905.github.io"
+                    issue-term="pathname"
+                    theme="github-light"
+                    crossorigin="anonymous"
+                    async>
+            </script>
+        
     </div>
+    <div id="comments-container"></div>
     <div class="column is-3">
         <div class="card">
     <div class="card-content">
@@ -131,6 +271,29 @@
     </div>
 </div>
     <br>
+        
+  
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h1 class="title is-5"><i class="fa fa-file" aria-hidden="true"></i> Related posts</h1>
+      
+      
+            <h1><a href="https://xyli1905.github.io/2019/08/response-of-loss-function-to-label-noise/">Response of Loss Functions to Label Noise (draft)</a></h1>
+            <time class="has-text-grey-light is-size-7">13 August 2019</time>
+      
+            <h1><a href="https://xyli1905.github.io/2019/08/neural-tangent-kernel-and-nn-dynamics/">Neural Tangent Kernel and NN Dynamics (under construction)</a></h1>
+            <time class="has-text-grey-light is-size-7">1 August 2019</time>
+      
+            <h1><a href="https://xyli1905.github.io/2019/07/variational-form-for-hx/">Variational Form for H(x)</a></h1>
+            <time class="has-text-grey-light is-size-7">29 July 2019</time>
+      
+    </div>
+</div>
+
+<br>
         <div class="card">
     <div class="card-content">
         <h1 class="title is-5"><i class="fa fa-sitemap" aria-hidden="true"></i> Categories</h1>

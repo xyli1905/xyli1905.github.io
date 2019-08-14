@@ -111,8 +111,81 @@
                     <article class="media">
                         <div class="media-content">
                             <div class="content">
-                                <p class="title is-4"><a href="https://xyli1905.github.io/2019/08/neural-tangent-kernel-and-nn-dynamics/">Neural Tangent Kernel and NN Dynamics (under construction)</a></p>
-                                <p class="subtitle is-size-6 has-text-grey-light">
+                                <p class="title is-4" style="margin: 7px;"><a href="https://xyli1905.github.io/2019/08/response-of-loss-function-to-label-noise/">Response of Loss Functions to Label Noise (draft)</a></p>
+                                <p class="subtitle is-size-6 has-text-grey-light" style="padding: 0px; margin: 8px;">
+                                    August 13, 2019 &middot;
+                                    
+                                        <i class="fa fa-user" aria-hidden="true"></i> Xingyu Li &middot;
+                                    
+                                    
+                                        <i class="fa fa-sitemap" aria-hidden="true"></i>
+                                        
+                                            <span class="category"><a href="https://xyli1905.github.io/categories/noise-and-generalization">Noise and Generalization</a></span>
+                                        
+                                        &middot;
+                                    
+                                    
+                                        <i class="fa fa-tag" aria-hidden="true"></i>
+                                        
+                                            <span class="tag"><a href="https://xyli1905.github.io/tags/math">math</a></span>
+                                        
+                                            <span class="tag"><a href="https://xyli1905.github.io/tags/information-theory">information theory</a></span>
+                                        
+                                        
+                                    
+                                    
+                                </p>
+                                <p>Distortion on dataset distribution by nosie labels Let $t$ and $t^*$ be the correct target label and the noisy label, respectively. Presently, we focus on binary classification and assume the label noise only depends on the correct label, i.e. the error rates are:
+$$e _- = P(t^* = +1 | t= -1) \quad \text{and} \quad e _+ = P(t^*=-1|t=+1).$$
+The noisy dataset defines the joint distribution $P(x, t^*)$, which relates to the clean distribution $P(x, t)$ through</p>
+                                <a href="https://xyli1905.github.io/2019/08/response-of-loss-function-to-label-noise/" class="button big">Read More</a>
+                            </div>
+                        </div>
+                    </article>
+                
+                    <article class="media">
+                        <div class="media-content">
+                            <div class="content">
+                                <p class="title is-4" style="margin: 7px;"><a href="https://xyli1905.github.io/2019/08/bayes-classifier-and-mi-classifier-with-noisy-labels/">Bayes Classifier and MI Classifier With Noisy Labels</a></p>
+                                <p class="subtitle is-size-6 has-text-grey-light" style="padding: 0px; margin: 8px;">
+                                    August 8, 2019 &middot;
+                                    
+                                        <i class="fa fa-user" aria-hidden="true"></i> Xingyu Li &middot;
+                                    
+                                    
+                                        <i class="fa fa-sitemap" aria-hidden="true"></i>
+                                        
+                                            <span class="category"><a href="https://xyli1905.github.io/categories/noise-and-generalization">Noise and Generalization</a></span>
+                                        
+                                        &middot;
+                                    
+                                    
+                                        <i class="fa fa-tag" aria-hidden="true"></i>
+                                        
+                                            <span class="tag"><a href="https://xyli1905.github.io/tags/review">review</a></span>
+                                        
+                                            <span class="tag"><a href="https://xyli1905.github.io/tags/math">math</a></span>
+                                        
+                                            <span class="tag"><a href="https://xyli1905.github.io/tags/information-theory">information theory</a></span>
+                                        
+                                        
+                                    
+                                    
+                                </p>
+                                <p>Definition and Relation This section is a partial review of Bao-Gang Hu&rsquo;s paper.
+Bayes Classifier without rejection and its Decision Rule Bayes Classifier makes decisions based on a (often) subjectively designed risk function $\mathfrak{R}$:
+$$\mathfrak{R}(y_j | x) = \sum_i \lambda _{ij} P(x | t_i)P(t_i),$$
+where $x \in \R^d$ is the input feature; $y_j$ and $t_i$ stand for the predicted class and the true class, respectively; $\lambda _{ij}$ is the cost when a true label $i$ is classified as $j$.</p>
+                                <a href="https://xyli1905.github.io/2019/08/bayes-classifier-and-mi-classifier-with-noisy-labels/" class="button big">Read More</a>
+                            </div>
+                        </div>
+                    </article>
+                
+                    <article class="media">
+                        <div class="media-content">
+                            <div class="content">
+                                <p class="title is-4" style="margin: 7px;"><a href="https://xyli1905.github.io/2019/08/neural-tangent-kernel-and-nn-dynamics/">Neural Tangent Kernel and NN Dynamics (under construction)</a></p>
+                                <p class="subtitle is-size-6 has-text-grey-light" style="padding: 0px; margin: 8px;">
                                     August 1, 2019 &middot;
                                     
                                         <i class="fa fa-user" aria-hidden="true"></i> Xingyu Li &middot;
@@ -133,9 +206,11 @@
                                         
                                             <span class="tag"><a href="https://xyli1905.github.io/tags/dynamics">dynamics</a></span>
                                         
-                                        &middot;
+                                            <span class="tag"><a href="https://xyli1905.github.io/tags/review">review</a></span>
+                                        
+                                        
                                     
-                                    <i class="far fa-clock"></i>&nbsp;7 min read
+                                    
                                 </p>
                                 <p>Discussion on Neural Tangent Kernel The Neural Tangent Kernel is introduced by Arthur Jacot et. al. to study the dynamics of a (S)GD-based learning model, say, the Neural Network. It is expected to enable one to &ldquo;study the training of ANNs in the functional space $\mathcal{F}$, on which the cost $C$ is convex.&rdquo;
 In the following, we will review the derivations of Arthur Jacot et. al. and argue that by definition the Neural Tangent Kernel only captures the first order dynamics of the Neural Networks.</p>
@@ -147,8 +222,8 @@ In the following, we will review the derivations of Arthur Jacot et. al. and arg
                     <article class="media">
                         <div class="media-content">
                             <div class="content">
-                                <p class="title is-4"><a href="https://xyli1905.github.io/2019/07/variational-form-for-hx/">Variational Form for H(x)</a></p>
-                                <p class="subtitle is-size-6 has-text-grey-light">
+                                <p class="title is-4" style="margin: 7px;"><a href="https://xyli1905.github.io/2019/07/variational-form-for-hx/">Variational Form for H(x)</a></p>
+                                <p class="subtitle is-size-6 has-text-grey-light" style="padding: 0px; margin: 8px;">
                                     July 29, 2019 &middot;
                                     
                                         <i class="fa fa-user" aria-hidden="true"></i> Xingyu Li &middot;
@@ -169,9 +244,9 @@ In the following, we will review the derivations of Arthur Jacot et. al. and arg
                                         
                                             <span class="tag"><a href="https://xyli1905.github.io/tags/variational-form">variational form</a></span>
                                         
-                                        &middot;
+                                        
                                     
-                                    <i class="far fa-clock"></i>&nbsp;2 min read
+                                    
                                 </p>
                                 <p>For continuum random variable $X$, the differential entropy id defined as
 $$\int P(x)\log\dfrac{1}{P(x)}\,\text{d}x,\tag{1}$$
@@ -187,8 +262,8 @@ $$\begin{aligned} \int P(x)\log\frac{1}{P(x)}\,\text{d}x &amp;= - \int P(x)\left
                     <article class="media">
                         <div class="media-content">
                             <div class="content">
-                                <p class="title is-4"><a href="https://xyli1905.github.io/2014/09/creating-a-new-theme/">Creating a New Theme</a></p>
-                                <p class="subtitle is-size-6 has-text-grey-light">
+                                <p class="title is-4" style="margin: 7px;"><a href="https://xyli1905.github.io/2014/09/creating-a-new-theme/">Creating a New Theme</a></p>
+                                <p class="subtitle is-size-6 has-text-grey-light" style="padding: 0px; margin: 8px;">
                                     September 28, 2014 &middot;
                                     
                                         <i class="fa fa-user" aria-hidden="true"></i> Michael Henderson &middot;
@@ -207,85 +282,13 @@ $$\begin{aligned} \int P(x)\log\frac{1}{P(x)}\,\text{d}x &amp;= - \int P(x)\left
                                         
                                             <span class="tag"><a href="https://xyli1905.github.io/tags/tutorial">tutorial</a></span>
                                         
-                                        &middot;
+                                        
                                     
-                                    <i class="far fa-clock"></i>&nbsp;34 min read
+                                    
                                 </p>
                                 <p>Introduction This tutorial will show you how to create a simple theme in Hugo. I assume that you are familiar with HTML, the bash command line, and that you are comfortable using Markdown to format content. I&rsquo;ll explain how Hugo uses templates and how you can organize your templates to create a theme. I won&rsquo;t cover using CSS to style your theme.
 We&rsquo;ll start with creating a new site with a very basic template.</p>
                                 <a href="https://xyli1905.github.io/2014/09/creating-a-new-theme/" class="button big">Read More</a>
-                            </div>
-                        </div>
-                    </article>
-                
-                    <article class="media">
-                        <div class="media-content">
-                            <div class="content">
-                                <p class="title is-4"><a href="https://xyli1905.github.io/2014/04/hugoisforlovers/">Getting Started with Hugo</a></p>
-                                <p class="subtitle is-size-6 has-text-grey-light">
-                                    April 2, 2014 &middot;
-                                    
-                                        <i class="fa fa-user" aria-hidden="true"></i> Somebody &middot;
-                                    
-                                    
-                                        <i class="fa fa-sitemap" aria-hidden="true"></i>
-                                        
-                                            <span class="category"><a href="https://xyli1905.github.io/categories/hugo">hugo</a></span>
-                                        
-                                        &middot;
-                                    
-                                    
-                                        <i class="fa fa-tag" aria-hidden="true"></i>
-                                        
-                                            <span class="tag"><a href="https://xyli1905.github.io/tags/tutorial">tutorial</a></span>
-                                        
-                                        &middot;
-                                    
-                                    <i class="far fa-clock"></i>&nbsp;2 min read
-                                </p>
-                                <p>Step 1. Install Hugo Go to Hugo releases and download the appropriate version for your OS and architecture.
-Save it somewhere specific as we will be using it in the next step.
-More complete instructions are available at Install Hugo
-Step 2. Build the Docs Hugo has its own example site which happens to also be the documentation site you are reading right now.
-Follow the following steps:
- Clone the Hugo repository Go into the repo Run hugo in server mode and build the docs Open your browser to http://localhost:1313  Corresponding pseudo commands:</p>
-                                <a href="https://xyli1905.github.io/2014/04/hugoisforlovers/" class="button big">Read More</a>
-                            </div>
-                        </div>
-                    </article>
-                
-                    <article class="media">
-                        <div class="media-content">
-                            <div class="content">
-                                <p class="title is-4"><a href="https://xyli1905.github.io/2014/04/goisforlovers/">(Hu)go Template Primer</a></p>
-                                <p class="subtitle is-size-6 has-text-grey-light">
-                                    April 2, 2014 &middot;
-                                    
-                                        <i class="fa fa-user" aria-hidden="true"></i> Somebody &middot;
-                                    
-                                    
-                                        <i class="fa fa-sitemap" aria-hidden="true"></i>
-                                        
-                                            <span class="category"><a href="https://xyli1905.github.io/categories/hugo">hugo</a></span>
-                                        
-                                        &middot;
-                                    
-                                    
-                                        <i class="fa fa-tag" aria-hidden="true"></i>
-                                        
-                                            <span class="tag"><a href="https://xyli1905.github.io/tags/templates">templates</a></span>
-                                        
-                                            <span class="tag"><a href="https://xyli1905.github.io/tags/themes">themes</a></span>
-                                        
-                                            <span class="tag"><a href="https://xyli1905.github.io/tags/tutorial">tutorial</a></span>
-                                        
-                                        &middot;
-                                    
-                                    <i class="far fa-clock"></i>&nbsp;7 min read
-                                </p>
-                                <p>Hugo uses the excellent Go html/template library for its template engine. It is an extremely lightweight engine that provides a very small amount of logic. In our experience that it is just the right amount of logic to be able to create a good static website. If you have used other template systems from different languages or frameworks you will find a lot of similarities in Go templates.
-This document is a brief primer on using Go templates.</p>
-                                <a href="https://xyli1905.github.io/2014/04/goisforlovers/" class="button big">Read More</a>
                             </div>
                         </div>
                     </article>
@@ -298,6 +301,12 @@ This document is a brief primer on using Go templates.</p>
     <div class="card-content">
         <h1 class="title is-5"><i class="fa fa-file" aria-hidden="true"></i> Recent posts</h1>
         
+            <h1><a href="https://xyli1905.github.io/2019/08/response-of-loss-function-to-label-noise/">Response of Loss Functions to Label Noise (draft)</a></h1>
+            <time class="has-text-grey-light is-size-7">13 August 2019</time>
+        
+            <h1><a href="https://xyli1905.github.io/2019/08/bayes-classifier-and-mi-classifier-with-noisy-labels/">Bayes Classifier and MI Classifier With Noisy Labels</a></h1>
+            <time class="has-text-grey-light is-size-7">8 August 2019</time>
+        
             <h1><a href="https://xyli1905.github.io/2019/08/neural-tangent-kernel-and-nn-dynamics/">Neural Tangent Kernel and NN Dynamics (under construction)</a></h1>
             <time class="has-text-grey-light is-size-7">1 August 2019</time>
         
@@ -306,12 +315,6 @@ This document is a brief primer on using Go templates.</p>
         
             <h1><a href="https://xyli1905.github.io/2014/09/creating-a-new-theme/">Creating a New Theme</a></h1>
             <time class="has-text-grey-light is-size-7">28 September 2014</time>
-        
-            <h1><a href="https://xyli1905.github.io/2014/04/hugoisforlovers/">Getting Started with Hugo</a></h1>
-            <time class="has-text-grey-light is-size-7">2 April 2014</time>
-        
-            <h1><a href="https://xyli1905.github.io/2014/04/goisforlovers/">(Hu)go Template Primer</a></h1>
-            <time class="has-text-grey-light is-size-7">2 April 2014</time>
         
     </div>
 </div>
@@ -333,7 +336,7 @@ This document is a brief primer on using Go templates.</p>
         
 			
 			<ul style="list-style: none;">
-				<li class="category"><a href="https://xyli1905.github.io/categories/noise-and-generalization">noise-and-generalization</a> (1)</li>
+				<li class="category"><a href="https://xyli1905.github.io/categories/noise-and-generalization">noise-and-generalization</a> (3)</li>
 			</ul>
         
         </div>          
@@ -346,11 +349,13 @@ This document is a brief primer on using Go templates.</p>
         
             <span class="tag"><a href="https://xyli1905.github.io/tags/dynamics">dynamics</a>(1)</span>
         
-            <span class="tag"><a href="https://xyli1905.github.io/tags/information-theory">information-theory</a>(1)</span>
+            <span class="tag"><a href="https://xyli1905.github.io/tags/information-theory">information-theory</a>(3)</span>
         
-            <span class="tag"><a href="https://xyli1905.github.io/tags/math">math</a>(2)</span>
+            <span class="tag"><a href="https://xyli1905.github.io/tags/math">math</a>(4)</span>
         
             <span class="tag"><a href="https://xyli1905.github.io/tags/neural-network">neural-network</a>(1)</span>
+        
+            <span class="tag"><a href="https://xyli1905.github.io/tags/review">review</a>(2)</span>
         
             <span class="tag"><a href="https://xyli1905.github.io/tags/templates">templates</a>(1)</span>
         
@@ -367,7 +372,7 @@ This document is a brief primer on using Go templates.</p>
     <div class="card-content">
         <h1 class="title is-5"><i class="fa fa-archive" aria-hidden="true"></i> Archives</h1>
         
-            <a href="https://xyli1905.github.io/archives/2019-08">2019-08</a> (1)<br>
+            <a href="https://xyli1905.github.io/archives/2019-08">2019-08</a> (3)<br>
         
             <a href="https://xyli1905.github.io/archives/2019-07">2019-07</a> (1)<br>
         
