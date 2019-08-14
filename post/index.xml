@@ -55,7 +55,7 @@ where $x \in \R^d$ is the input feature; $y_j$ and $t_i$ stand for the predicted
     </item>
     
     <item>
-      <title>Neural Tangent Kernel and NN Dynamics (under construction)</title>
+      <title>Neural Tangent Kernel and NN Dynamics (draft)</title>
       <link>https://xyli1905.github.io/2019/08/neural-tangent-kernel-and-nn-dynamics/</link>
       <pubDate>Thu, 01 Aug 2019 12:48:05 -0700</pubDate>
       
