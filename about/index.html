@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://xyli1905.github.io/css/blog.css" />
 
     
@@ -34,26 +35,62 @@
             }
         .search-results a:hover {background-color: #ddd;}
     </style>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    
 </head>
 <body>
 
-    
-    <nav class="navbar is-fixed-top" id="navBar" role="navigation" aria-label="main navigation" style="border-bottom:1px solid #d3d3d3">
-        <div class="navbar-brand">
+    <nav class="navbar is-fixed-top navbar-expand-lg navbar-light bg-light" style="border-bottom:1px solid #ddbfbf; padding-top: 2px;padding-bottom: 2px;padding-left: 6px;padding-right: 6px;">
+        <div class="navbar-brand" style="
+            padding-top: 5px;
+            padding-bottom: 0px;
+            width: 50px;
+            height: 51px;
+            margin-right: 6px;
+        ">
             <a class="navbar-item"><img src="https://xyli1905.github.io/img/signature-symbol.png"></a>
-            <a class="navbar-item" href="https://xyli1905.github.io/">Home</a>
-            <a class="navbar-item" href="https://xyli1905.github.io/about">About</a>
-            <a class="navbar-item" href="https://github.com/xyli1905/DeepInfoFlow" target="_blank" rel="noopener noreferrer">DeepInfoFlow_Git</a>
-            <a role="button" class="navbar-burger" onclick="document.querySelector('.navbar-menu').classList.toggle('is-active');" data-target="mainNavbar" aria-label="menu" aria-expanded="false">
-                <span aria-hidden="true"></span> 
-                <span aria-hidden="true"></span> 
-                <span aria-hidden="true"></span>
-                
-            </a>
         </div>
-        <div id="mainNavbar" class="navbar-menu">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="https://xyli1905.github.io/">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://xyli1905.github.io/about">About</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Projects
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="https://github.com/xyli1905/DeepInfoFlow" target="_blank" rel="noopener noreferrer">DeepInfoFlow</a>
+                        <a class="dropdown-item" href="#" >Learning with Noisy Data</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="teaching" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Teaching
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item disabled" href="#" >CSE242 Machine Learning (TA 19Fall)</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#">Publications</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#">CV</a>
+                </li>
+            </ul>
+            
             <div class="navbar-end">
-                
                 <div class="navbar-item" id="search">
                     <div id="baseurl" data-url="https://xyli1905.github.io/"></div>
                     <div :class="{'dropdown': true, 'is-active':showresult}">
@@ -74,11 +111,15 @@
             </div>
         </div>
     </nav>
-    
 
     
     <section class="hero is-info is-medium">
-        <div class="hero-body" style="background-image: url(https://xyli1905.github.io/img/calm.jpg); background-position: center center;">
+        <div class="hero-body" style="
+            background-image: url(/img/calm.jpg); 
+            background-position: center center;
+            padding-top: 106px;
+            padding-bottom: 106px;
+        ">
             <div class="container has-text-centered">
                 <br>
                 <h1 class="title is-size-1">
@@ -94,32 +135,19 @@
 
 
 <div class="container">
-    <div class="section">
+    <div class="section" style="padding-top: 21px">
     
 
-<header>
-    <div class="columns">
-        <div class="column is-9">
-            <div class="title">
-                <h1>about me</h1>
-            </div>
-            <div class="meta">
-                August 6, 2019 &middot;
-                
-                
-                
-                
-            </div>
-        </div>
-    </div>
-</header>
+
 
 <div class="columns">
     <div class="column is-9">
         <div class="tile is-child box">
             <div class="content">
-                <p >
-<img align=left src="https://xyli1905.github.io/img/me.jpg" width="204" style="margin: 10px 30px 10px 0px;">
+                
+
+<p >
+<img align=left src="https://xyli1905.github.io/img/me.jpg" width="176" style="margin: 10px 30px 10px 0px;">
 <!-- <figure>
     <img src="https://xyli1905.github.io/img/me.jpg" width="304"/> <figcaption>
             <h4>Figure Caption</h4>
@@ -128,21 +156,27 @@
  -->
 </p>
 
+<h3 id="contact">Contact</h3>
+
+<p><strong>Xingyu Li</strong> <a href="https://github.com/xyli1905"><svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a></p>
+
+<p>MS Computer Science @BSOE UC Santa Cruz</br>
+Email: <a href="mailto:xli279@ucsc.edu">xli279@ucsc.edu</a></p>
+
+<h3 id="general-info">General Info</h3>
+
+<p>Previously, I obtained my PhD degree in physics at University of Science and Technology of China (USTC), where I focused on the study of electron-molecular collision dynamics.
+My current research interests focus on 1). the dynamics of the <strong>training process</strong> of Neural Networks and its relations to the <strong>generalizability</strong>. 2). the performance of Machine Learning models (including Neural Networks) in the presence of <strong>noise data</strong>.
+I&rsquo;m also every interested in the application of Deep Learning algorithms in complex physical and biological systems.</p>
+
+<hr/>
+
+<h3 id="recent-news">Recent News</h3>
+
 <ul>
-<li>Too lazy, Just a photo;</li>
-<li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Etiam lobortis facilisis sem. Nullam nec mi et neque pharetra sollicitudin. Praesent imperdiet mi necante.</li>
-<li>Donec ullamcorper, felis non sodales commodo, lectus velit ultrices augue, a dignissim nibh lectus placerat pede.</li>
-<li>Praesent blandit blandit mauris. Praesent lectus tellus, aliquet aliquam, luctus a, egestas a, turpis. Mauris lacinia lorem sit amet ipsum.</li>
-<li>Nullam nec mi et neque pharetra sollicitudin. Praesent imperdiet mi nec ante. Donec ullamcorper, felis non sodales commodo, lectus velit ultrices augue, a dignissim nibh lectus placerat pede.</li>
+<li>I am TAing <a href="https://cse242-fall19-01.courses.soe.ucsc.edu/">CSE 242: Machine Learning</a> for the Fall quarter 2019 at UC Santa Cruz.</li>
+<li>Currently, I&rsquo;m working with <a href="http://www.yliuu.com/">Prof. Yang Liu</a> on the Learning with Noisy Data project.</li>
 </ul>
-
-<p></br></p>
-
-<p>Duis fringilla tristique neque. Sed interdum
-libero ut metus. Pellentesque placerat. Nam rutrum augue a leo. Morbi sed elit
-sit amet ante lobortis sollicitudin. Praesent blandit blandit mauris. Praesent
-lectus tellus, aliquet aliquam, luctus a, egestas a, turpis. Mauris lacinia lorem
-sit amet ipsum. Nunc quis urna dictum turpis accumsan semper.</p>
 
             </div>
             <hr>
@@ -165,20 +199,30 @@ sit amet ipsum. Nunc quis urna dictum turpis accumsan semper.</p>
     <div class="card-content">
         <h1 class="title is-5"><i class="fa fa-file" aria-hidden="true"></i> Recent posts</h1>
         
-            <h1><a href="https://xyli1905.github.io/2019/08/response-of-loss-function-to-label-noise/">Response of Loss Functions to Label Noise (draft)</a></h1>
+            <a href="https://xyli1905.github.io/2019/08/response-of-loss-function-to-label-noise/">Response of Loss Functions to Label Noise (draft)</a></br>
+            
             <time class="has-text-grey-light is-size-7">13 August 2019</time>
+            </br>
         
-            <h1><a href="https://xyli1905.github.io/2019/08/bayes-classifier-and-mi-classifier-with-noisy-labels/">Bayes Classifier and MI Classifier With Noisy Labels</a></h1>
+            <a href="https://xyli1905.github.io/2019/08/bayes-classifier-and-mi-classifier-with-noisy-labels/">Bayes Classifier and MI Classifier With Noisy Labels</a></br>
+            
             <time class="has-text-grey-light is-size-7">8 August 2019</time>
+            </br>
         
-            <h1><a href="https://xyli1905.github.io/2019/08/neural-tangent-kernel-and-nn-dynamics/">Neural Tangent Kernel and NN Dynamics (draft)</a></h1>
+            <a href="https://xyli1905.github.io/2019/08/neural-tangent-kernel-and-nn-dynamics/">Neural Tangent Kernel and NN Dynamics (draft)</a></br>
+            
             <time class="has-text-grey-light is-size-7">1 August 2019</time>
+            </br>
         
-            <h1><a href="https://xyli1905.github.io/2019/07/variational-form-for-hx/">Variational Form for H(x)</a></h1>
+            <a href="https://xyli1905.github.io/2019/07/variational-form-for-hx/">Variational Form for H(x)</a></br>
+            
             <time class="has-text-grey-light is-size-7">29 July 2019</time>
+            </br>
         
-            <h1><a href="https://xyli1905.github.io/2014/09/creating-a-new-theme/">Creating a New Theme</a></h1>
+            <a href="https://xyli1905.github.io/2014/09/creating-a-new-theme/">Creating a New Theme</a></br>
+            
             <time class="has-text-grey-light is-size-7">28 September 2014</time>
+            </br>
         
     </div>
 </div>
@@ -193,19 +237,16 @@ sit amet ipsum. Nunc quis urna dictum turpis accumsan semper.</p>
         <div class="categories">
         
 			
-			<ul style="list-style: none;">
-				<li class="category"><a href="https://xyli1905.github.io/categories/deepinfoflow">deepinfoflow</a> (1)</li>
-			</ul>
+			
+            <a href="https://xyli1905.github.io/categories/deepinfoflow">deepinfoflow</a> (1)</br>
         
 			
-			<ul style="list-style: none;">
-				<li class="category"><a href="https://xyli1905.github.io/categories/hugo">hugo</a> (4)</li>
-			</ul>
+			
+            <a href="https://xyli1905.github.io/categories/hugo">hugo</a> (4)</br>
         
 			
-			<ul style="list-style: none;">
-				<li class="category"><a href="https://xyli1905.github.io/categories/noise-and-generalization">noise-and-generalization</a> (3)</li>
-			</ul>
+			
+            <a href="https://xyli1905.github.io/categories/noise-and-generalization">noise-and-generalization</a> (3)</br>
         
         </div>          
     </div>
